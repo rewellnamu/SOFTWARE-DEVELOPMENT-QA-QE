@@ -1,0 +1,48 @@
+main{
+    margin-left: 500px;
+}
+#photo1{
+    height: 200px;
+    width: 200px;
+}
+#fbook{
+    height: 20px;
+    margin-left: 40px;
+    cursor: pointer;
+}
+#x{
+    height: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+#ig{
+    height: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+.googlepage{
+    background-color: yellow;
+    padding: 70px;
+    width: 200px;
+    border-radius: 50px;
+    margin-top: 50px;
+}
+p{
+    margin-left: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+button{
+    margin-top: 20px;
+    border-radius: 50px;
+    height: 50px;
+    width: 200px;
+    border-style: hidden;
+    cursor: pointer;
+}
+.profile{
+    margin-top: 50px;
+}
+h2{
+  margin-top: -50px;  
+}
