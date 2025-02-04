@@ -4,7 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>QR.html/css</title>
-    <link rel="stylesheet" href="style.css" />
+ <style> 
+  body{
+    background-color: burlywood; 
+}
+.box{
+background-color: silver;
+width: 300px;
+margin-left: 500px;
+align-items: center;
+height: 500px;
+padding: px;
+border-radius: 10px;
+margin-top: 50px;
+cursor: pointer;
+}
+img{
+    width: 250px;
+    height: 250px;
+    margin-left: 25px;
+    margin-top: 25px;
+    border-radius: 10px;
+}
+h3{
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: firebrick;
+}
+p{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: small;
+    text-align: center;
+}
+</style>
   </head>
   <body>
     <div class="main">
