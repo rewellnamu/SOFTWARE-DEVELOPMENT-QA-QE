@@ -1,0 +1,98 @@
+nav{
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 5px solid black;
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    margin-right: 50px;
+    
+}
+.profile{
+    background-color: cadetblue;
+    height: 500px;
+}
+.final{
+    background-color: coral;
+}
+main{
+    display: flexbox;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+#features{
+    margin-right: 400px;
+    border-right-style: double;
+    border-left-style: double;
+}
+#login{
+    margin-top: 20px;
+}
+#register{
+    margin-bottom: 10px;
+    margin-left: 20px;
+    width: 100px;
+    border-radius: 20px;
+    border-color: chartreuse;
+    font-family: 'Courier New', Courier, monospace;
+}
+main{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+#logo{
+    height: 400px;
+
+}
+.profile1{
+    background-color: darkgoldenrod;
+    width: 700px;
+    height: 450px;
+    margin-left: 150px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.profile2{
+    background-color: darkkhaki;
+    width: 400px;
+    height: 450px;
+    margin-right: 150px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.images{
+    margin-top: 30px;
+    margin-left: 50px;
+}
+button{
+    margin-top: 20px;
+    margin-left: 50px;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}
+p{
+    margin-left: 50px;
+    align-content: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+button:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+main:hover{
+    background-color: black;
+    color: white;
+}
+h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
