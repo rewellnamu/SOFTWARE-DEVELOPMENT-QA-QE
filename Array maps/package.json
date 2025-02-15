@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "name": "array-map",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon db.json",
+    "json-server": "json-server --watch db.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "chalk": "^5.4.1",
+    "json-server": "1.0.0-beta.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.9"
+  }
+}
