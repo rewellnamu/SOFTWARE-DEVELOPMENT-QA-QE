@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(pexels-eberhardgross-1366919.jpg);
+}
+.calculator {
+    background-image: url(pexels-eberhardgross-1624496.jpg);
+    background-size: cover;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+}
+.calculator input {
+    width: 100%;
+    height: 50px;
+    text-align: right;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+button {
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: teal;
+    border: 50px;
+    
+}
+p{
+    font-weight: bolder;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: larger;
+}
+:hover.calculator{
+    background-image: url(pexels-eberhardgross-1366919.jpg);
+}
+#display{
+    border-bottom-style:;
+    border-top-style:;
+    border-color:yellow;
+}

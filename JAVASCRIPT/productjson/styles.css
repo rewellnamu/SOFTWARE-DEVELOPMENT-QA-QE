@@ -1,0 +1,74 @@
+body{
+    background-color: cadetblue;
+}
+main{
+    display: flex;
+}
+img{
+    height: 200px;
+    cursor: pointer;
+}
+nav{
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#products{
+background-color: black;
+border-radius: 20px;
+    display:grid ;
+    justify-content: left;
+    color: white;
+    padding: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    height: 350px;
+    margin-left: 50px;
+}
+#photos{
+    background-image: url(close-up-air-fryer.jpg);
+    background-size: cover;
+    margin-left: 100px;
+    width: 800px;
+    height: 420px;
+}
+#logo{
+    height: 50px;
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+button{
+    margin-left: 5px;
+    height: 50px;
+    width: 80px;
+    border-radius: 10px;
+    background-color: darkgoldenrod;
+    border-style: hidden;
+
+}
+
+a{
+    text-decoration: none;
+    color: antiquewhite;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    }
+
+h1{
+}
+footer{
+    margin-left: 500px;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+button:hover{
+    background-color: blue;
+    height: 70px;
+}
+img:hover{
+    height: 250px;
+}
