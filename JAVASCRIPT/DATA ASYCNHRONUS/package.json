@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "name": "data-asynchronous",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon script.js",
+    "json-server": "json-server db.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "chalk": "^5.4.1",
+    "json-server": "1.0.0-beta.3",
+    "nodemon": "^3.1.9",
+    "uuid": "^11.0.5"
+  }
+}

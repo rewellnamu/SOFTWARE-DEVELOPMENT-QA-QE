@@ -1,0 +1,136 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #2a2e35;
+    color: #d1d1d1;
+    margin: 0;
+    padding: 20px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(90deg, #1f1f1f, #3a3d41);
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  input,
+  select,
+  button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #3a3d41;
+    color: #d1d1d1;
+  }
+  
+  button {
+    cursor: pointer;
+    transition: 0.3s;
+    background: #4ecca3;
+    color: white;
+  }
+  
+  button:hover {
+    background: #45b89f;
+  }
+  
+  #book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    padding: 20px;
+  }
+  
+  .book {
+    background: #3a3d41;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .book:hover {
+    transform: scale(1.05);
+  }
+  
+  .book img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  .buy-button {
+    background: #ff8c42;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: white;
+  }
+  
+  .buy-button:hover {
+    background: #e67e30;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .modal-content {
+    background: #3a3d41;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .dark-mode {
+    background-color: #1a1c1f;
+    color: #d1d1d1;
+  }
+  
+  .dark-mode header {
+    background: #222;
+  }
+  
+  .dark-mode button {
+    background: #5a5d63;
+    color: white;
+  }
+  
+  #cart-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #3a3d41;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  #cart-items {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #555;
+  }
+  
+  .cart-item button {
+    background: #ff4c4c;
+  }
+  
+  .cart-item button:hover {
+    background: #e04343;
+  }
