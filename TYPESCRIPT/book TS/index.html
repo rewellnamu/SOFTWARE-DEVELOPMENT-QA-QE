@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Library</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+   <header>
+      <h1> Library|KAMUSI</h1>
+      <select id="search-dropdown">
+        <option value="">Select filter...</option>
+        <option value="genre">Genre</option>
+        <option value="year">Year</option>
+        <option value="pages">Pages</option>
+        <option value="author">Author</option>
+        <option value="publisher">Publisher</option>
+      </select>
+      <input type="text" id="search" placeholder="Enter search value..." />
+      <select id="sort">
+        <option value="year">Sort by Year</option>
+        <option value="pages">Sort by Pages</option>
+      </select>
+      <button id="theme-toggle">Toggle Theme</button>
+      <button id="cart-button">🛒 Cart (<span id="cart-count">0</span>)</button>
+    </header>
+
+    <main id="book-list"></main>
+
+    <div id="cart-modal" class="hidden">
+      <div class="modal-content">
+        <span class="close" id="close-cart">&times;</span>
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+      </div>
+    </div>
+
+   <script src="./dist/index.js" type="module"></script>
+  </body>
+</html>
