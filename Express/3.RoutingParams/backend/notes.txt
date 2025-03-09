@@ -1,0 +1,49 @@
+📌 What Are Route Parameters?
+Route parameters (or route params) are dynamic parts of a URL used to capture specific values. They allow the backend to handle custom user requests like:
+
+Fetching a specific event by ID.
+Fetching events based on category.
+Combining route params with query params for more flexible API calls.
+
+📌 Defining Route Parameters
+A route parameter is defined using a colon (:) followed by a parameter name in the route path.
+
+app.get("/api/events/:id, (req, res) => {
+    const eventId = req.params.id //capture value from the url
+    res.send(`Fetching event with ID: ${eventId}`)
+})
+
+🔹 URL Example: http://localhost:3000/api/events/1
+🔹 Captured Param: req.params.id = "1"
+
+{
+    "id": 1,
+    "title": "Summer Music Festival",
+    "price": 50,
+    "location": "New York",
+    "company": "Music Festivals Inc.",
+    "category": "Music",
+    "date": "2023-07-15",
+    "duration": "3 hours",
+    "attendees": 5000,
+    "rating": 4.5,
+    "tags": [
+        "outdoor",
+        "live music",
+        "festival"
+    ]
+}
+
+ http://localhost:3000/api/events/fghjklb;fjhuygl;mkdh'; ------ Not a number response
+
+
+
+ //Hnadling multiple route paramters 
+//We can combine multiple route parameters in one request.
+//GET http://localhost:3000/api/events/music/1
+app.get('/api/events/:category/:id', (req:Request, res:Response) => {
+    const {category, id} = req.params
+    res.send(`Category: ${category}, Event Id: ${id}`)
+})
+//Category: music, Event Id: 1
+//Route parameters can be optional by adding a ? after the parameter name.
