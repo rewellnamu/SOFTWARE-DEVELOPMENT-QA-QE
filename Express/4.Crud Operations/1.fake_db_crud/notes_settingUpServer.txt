@@ -1,0 +1,8 @@
+//This is the best format to cong=figure your server
+//configure dotenv  - dotenv.config()
+//instance of express  - const app = express()
+//middlwares - app.use() - anything that comes before routes e.g json format, cors, 
+//routes  - app.get, app.post 
+//more middles exmaple - app.use(notFound)  app.use(errorHandler) - custom middlewares for error handling 
+
+//create server  - listen

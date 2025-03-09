@@ -1,0 +1,62 @@
+CRUD operations are the four basic functions that are essential for managing data in any application. CRUD stands for Create, Read, Update, and Delete. These operations are the foundation of most database interactions and are used to manipulate data in a persistent storage system (e.g., a database). Understanding CRUD is crucial for building applications that store, retrieve, and manage data effectively.
+
+1. Create
+Purpose: Add new data to the system.
+Operation: Insert a new record into the database.
+Example: Adding a new user, product, or event to the system.
+HTTP Method: POST
+
+app.post('/api/events', (req: Request, res: Response) => {
+    const newEvent = req.body; // Data sent in the request body
+    events.push(newEvent); // Add the new event to the array
+    res.status(201).json(newEvent); // Return the newly created event
+});
+
+
+2. Read
+Purpose: Retrieve or fetch data from the system.
+Operation: Query the database to get one or more records.
+Example: Fetching a list of events or details of a specific event.
+HTTP Method: GET
+app.get('/api/events/:id', (req: Request, res: Response) => {
+    const eventId = Number(req.params.id);
+    const event = events.find((event) => event.id === eventId);
+    if (!event) {
+        return res.status(404).json({ message: "Event not found" });
+    }
+    res.json(event); // Return the event data
+});
+
+
+3. Update
+Purpose: Modify existing data in the system.
+Operation: Update a specific record in the database.
+Example: Editing the details of an event (e.g., changing the price or location).
+HTTP Method: PUT or PATCH
+PUT: Replace the entire record.
+PATCH: Update only specific fields of the record.
+app.put('/api/events/:id', (req: Request, res: Response) => {
+    const eventId = Number(req.params.id);
+    const updatedEvent = req.body; // Updated data sent in the request body
+    const index = events.findIndex((event) => event.id === eventId);
+    if (index === -1) {
+        return res.status(404).json({ message: "Event not found" });
+    }
+    events[index] = { ...events[index], ...updatedEvent }; // Update the event
+    res.json(events[index]); // Return the updated event
+});
+
+4. Delete
+Purpose: Remove data from the system.
+Operation: Delete a specific record from the database.
+Example: Removing an event that is no longer needed.
+HTTP Method: DELETE
+app.delete('/api/events/:id', (req: Request, res: Response) => {
+    const eventId = Number(req.params.id);
+    const index = events.findIndex((event) => event.id === eventId);
+    if (index === -1) {
+        return res.status(404).json({ message: "Event not found" });
+    }
+    events.splice(index, 1); // Remove the event from the array
+    res.status(204).send(); // No content to return
+});
