@@ -1,0 +1,36 @@
+📌 What Are Query Parameters?
+Query parameters are key-value pairs sent in the URL to provide optional information to the server. They are typically used for:
+
+Filtering (e.g., fetch events by location)
+Sorting (e.g., sort events by price)
+Pagination (e.g., get events for page 2)
+Search queries (e.g., find events with "concert" in the title)
+✅ Query parameters always come after the ? in a URL and multiple parameters are separated by &.
+
+
+1️⃣ Performance Optimization (Reduce Data Transfer)
+If we filter on the frontend, the server sends all data to the client.
+If we filter on the backend, the server only sends the relevant data.
+📌 Example
+
+Frontend filtering: Fetch 100,000 events from the server and filter on the client → Slow!
+Backend filtering: Fetch only 10 relevant events based on a query → Much faster!
+🔹 Less data = Faster page load & better performance!
+
+2️⃣ Reduced Bandwidth Usage
+Sending unfiltered data to the frontend increases network traffic.
+Backend filtering minimizes unnecessary data transfer, especially on slow networks
+
+3️⃣ Security & Data Privacy
+If you send all data to the frontend, sensitive information may be exposed.
+Users can manipulate frontend filters, but they cannot change backend queries.
+
+4️⃣ Database Efficiency (Faster Queries)
+If we filter on the frontend, we fetch everything from the database → Slow.
+If we filter on the backend, we use database queries (WHERE, LIMIT) → Faster performance
+
+✅ Query parameters always come after the ? in a URL and multiple parameters are separated by &.
+//we want to do this 
+/api/events?location=New York
+/api/events?company=Live Nation&price=20
+/api/events?title=Food

@@ -1,0 +1,4 @@
+// install these
+//npm i express 
+// npm i -D typescript @types/express ts-node @types/node nodemon 
+//Always add a -D when you adding something for the devDependancies 
