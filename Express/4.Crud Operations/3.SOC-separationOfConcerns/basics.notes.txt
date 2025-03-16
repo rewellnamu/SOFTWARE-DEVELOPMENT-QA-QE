@@ -1,0 +1,100 @@
+1. Routes
+Routes are the backbone of any web application. They define how the application responds to client requests at specific endpoints (URLs). In Express, a route is a combination of:
+An HTTP method (e.g., GET, POST, PUT, DELETE).
+A path (e.g., /users, /posts/:id).
+A handler function (or callback) that processes the request and sends a response
+app.get('/users', (req, res) => {
+  res.send('List of users');
+});
+
+
+2. Controllers
+Controllers are functions that handle the logic for a specific route. Instead of writing all the logic directly inside the route handler, controllers help organize the code by separating concerns. A controller typically:
+Processes the request (e.g., validates input, interacts with the database).
+Sends a response back to the client.
+// Controller function
+const getUsers = (req, res) => {
+  const users = [{ id: 1, name: 'John' }, { id: 2, name: 'Jane' }];
+  res.json(users);
+};
+
+// Route using the controller
+app.get('/users', getUsers);
+By using controllers, your code becomes more modular, reusable, and easier to maintain
+
+
+3. Middleware
+Middleware functions are functions that have access to the request object (req), the response object (res), and the next function in the application’s request-response cycle. Middleware can:
+Execute any code.
+Modify the request or response objects.
+End the request-response cycle (by sending a response).
+Call the next middleware in the stack using next().
+Middleware is used for tasks like:
+Logging requests.
+Parsing request bodies (e.g., JSON, form data).
+Authentication and authorization.
+Error handling.
+
+
+// Middleware to log request details
+const logger = (req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next(); // Pass control to the next middleware or route handler
+};
+
+// Use the middleware globally
+app.use(logger);
+
+// Route with middleware
+app.get('/users', (req, res) => {
+  res.send('List of users');
+});
+
+
+
+
+//folder structure of SOC
+/src
+  ├── /controllers
+  │     ├── userController.ts
+  │     ├── eventController.ts
+  │
+  ├── /middlewares
+  │     ├── asyncHandler.ts
+  │
+  ├── /routes
+  │     ├── userRoutes.ts
+  │     ├── eventRoutes.ts
+  │
+  ├── /db
+  │     ├── db.config.ts
+  │
+  ├── server.ts
+
+
+  express.Router
+Use the express.Router class to create modular, mountable route handlers. A Router instance is a complete middleware and routing system; for this reason, it is often referred to as a “mini-app”.
+
+The following example creates a router as a module, loads a middleware function in it, defines some routes, and mounts the router module on a path in the main app.
+
+Create a router file named birds.js in the app directory, with the following content:
+const express = require('express')
+const router = express.Router()
+
+// middleware that is specific to this router
+const timeLog = (req, res, next) => {
+  console.log('Time: ', Date.now())
+  next()
+}
+router.use(timeLog)
+
+// define the home page route
+router.get('/', (req, res) => {
+  res.send('Birds home page')
+})
+// define the about route
+router.get('/about', (req, res) => {
+  res.send('About birds')
+})
+
+module.exports = router
