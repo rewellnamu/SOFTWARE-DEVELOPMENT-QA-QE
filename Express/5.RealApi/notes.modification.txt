@@ -1,0 +1,107 @@
+Should the users table have role_id, or should user_roles have user_id?
+The correct approach is to store the foreign key (role_id) inside the users table because:
+
+✅ Each user belongs to only one role, but a role can belong to many users.
+✅ Roles are predefined (Admin, Organizer, Attendee, etc.), while users are dynamic.
+✅ Normalization – Avoids unnecessary duplication in the user_roles table.
+
+📌 Correct Table Relationship
+One user_role → Many users (1:N relationship).
+users.role_id references user_roles.id.
+
+-- Create users table with role_id as a foreign key
+
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role_id INT DEFAULT 1, -- Default role as 'Attendee'
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW(),
+    FOREIGN KEY (role_id) REFERENCES user_roles(id) ON DELETE SET NULL
+);
+
+-- Create user_roles table
+CREATE TABLE user_roles (
+    id SERIAL PRIMARY KEY,
+    role_name VARCHAR(50) UNIQUE NOT NULL,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT NOW()
+);
+
+-- Insert default roles
+INSERT INTO user_roles (role_name, description) VALUES
+('Attendee', 'A regular user who can attend events.'),
+('Organizer', 'A user who can create and manage events.'),
+('Admin', 'The application owner with full access.');
+
+📌 Step 2: Modify the users Table to Include role_id
+Since users already exists, we alter it instead of dropping and recreating it.
+ALTER TABLE users ADD COLUMN role_id INT DEFAULT 1; -- Default to 'Attendee'
+
+I see the issue with your SQL. You're trying to add a foreign key constraint to a column that doesn't exist in your users table yet. The error message indicates that the role_id column is missing.
+Before you can add a foreign key constraint, you need to first add the role_id column to your users table. Here's how to modify your SQL to make it work:
+
+-- First add the role_id column to the users table
+ALTER TABLE users
+ADD COLUMN role_id INTEGER;
+
+-- Then add the foreign key constraint
+ALTER TABLE users
+ADD CONSTRAINT fk_user_role FOREIGN KEY (role_id)
+REFERENCES user_roles(id) ON DELETE SET NULL;
+
+-- Optionally, set default role for existing users (e.g., 'Attendee' with ID 1)
+UPDATE users
+SET role_id = 1
+WHERE role_id IS NULL;
+
+
+
+📌 Querying Users with Roles
+To fetch users and their roles:
+Fetch All Users with Their Roles
+
+
+SELECT users.id, users.name, users.email, user_roles.role_name
+FROM users
+JOIN user_roles ON users.role_id = user_roles.id;
+
+
+Fetch Events Along with Their Organizers
+SELECT events.id, events.title, events.location, events.date, 
+       users.name AS organizer, user_roles.role_name
+FROM events
+JOIN users ON events.user_id = users.id
+JOIN user_roles ON users.role_id = user_roles.id;
+
+🎯 Final Schema Overview
+Table	Columns
+user_roles	id (PK), role_name, description, created_at
+users	id (PK), name, email, password, role_id (FK to user_roles), created_at, updated_at
+events	id (PK), user_id (FK to users), title, location, date, price, created_at, updated_at
+
+
+2️⃣ Test API Endpoints for Each Role
+🟢 Attendee (Jamal)
+✅ GET /api/v1/events → ✅ Success
+✅ GET /api/v1/events/:id → ✅ Success
+❌ POST /api/v1/events → ❌ 403 Forbidden
+❌ PUT /api/v1/events/:id → ❌ 403 Forbidden
+❌ DELETE /api/v1/events/:id → ❌ 403 Forbidden
+
+🟡 Organizer (Miriam)
+✅ POST /api/v1/events → ✅ Success
+✅ GET /api/v1/events → ✅ Success
+✅ PUT /api/v1/events/:id (Only her events) → ✅ Success
+✅ DELETE /api/v1/events/:id (Only her events) → ✅ Success
+❌ DELETE /api/v1/events/:id/admin → ❌ 403 Forbidden
+❌ GET /api/v1/users → ❌ 403 Forbidden
+
+🔴 Admin (John Doe)
+✅ GET /api/v1/users → ✅ Success
+✅ PUT /api/v1/users/:id → ✅ Success
+✅ DELETE /api/v1/users/:id → ✅ Success
+✅ DELETE /api/v1/events/:id/admin → ✅ Success
+
