@@ -1,4 +1,5 @@
 import asyncHandler from "@app/middlewares/asyncHandler";
+import jwt from "jsonwebtoken";
 import bcrypt from 'bcrypt';
 import { Request, Response, NextFunction } from "express";
 import pool from '@app/db/db.config'

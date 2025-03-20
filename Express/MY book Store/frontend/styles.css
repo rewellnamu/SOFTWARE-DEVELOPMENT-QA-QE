@@ -79,6 +79,10 @@ h1 {
     font-size: 0.95rem;
     color: var(--dark);
 }
+.search-bar input::placeholder {
+    color: #aaa;
+    font-style: italic;
+    font-size: 0.9rem;}
 
 .search-bar input:focus {
     outline: none;
