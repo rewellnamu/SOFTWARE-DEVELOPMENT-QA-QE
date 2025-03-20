@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Authentication System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="register.css">
+</head>
+<body class="admin-mode">
+    <div class="container">
+        <!-- Left Panel with Role Selection -->
+        <div class="left-panel">
+            <div class="logo">
+                <i class="fas fa-book"></i>
+                <span>LibrarySystem</span>
+            </div>
+            <div class="role-title">Select Your Role</div>
+            <div class="roles">
+                <div class="role admin-role active" data-role="admin">
+                    <div class="role-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="role-info">
+                        <div class="role-name">Administrator</div>
+                        <div class="role-desc">Manage the entire system</div>
+                    </div>
+                </div>
+                <div class="role librarian-role" data-role="librarian">
+                    <div class="role-icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <div class="role-info">
+                        <div class="role-name">Librarian</div>
+                        <div class="role-desc">Manage books and borrowers</div>
+                    </div>
+                </div>
+                <div class="role borrower-role" data-role="borrower">
+                    <div class="role-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="role-info">
+                        <div class="role-name">Borrower</div>
+                        <div class="role-desc">Borrow and return books</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel with Auth Forms -->
+        <div class="right-panel">
+            <!-- Login Form -->
+            <div class="auth-card login-card active" id="login-card">
+                <div class="card-header">
+                    <h2>Login</h2>
+                    <p class="role-text">Administrator Access</p>
+                </div>
+                <form id="login-form">
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <input type="password" placeholder="Password" required>
+                        <div class="password-toggle">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="remember-forgot">
+                        <label class="remember">
+                            <input type="checkbox">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+                    <a href="http://localhost:5173/">
+                        <button type="submit" class="btn admin-btn" >Login</button>
+                    </a>
+                   
+                    <div class="card-switch">
+                        <p>Don't have an account? <a href="#" class="switch-link" data-target="register">Register</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Register Form -->
+            <div class="auth-card register-card" id="register-card">
+                <div class="card-header">
+                    <h2>Register</h2>
+                    <p class="role-text">Administrator Access</p>
+                </div>
+                <form id="register-form">
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <input type="password" placeholder="Password" required>
+                        <div class="password-toggle">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <input type="password" placeholder="Confirm Password" required>
+                    </div>
+                    <div class="terms">
+                        <label>
+                            <input type="checkbox" required>
+                            <span>I agree to the <a href="#">Terms and Conditions</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn admin-btn">Register</button>
+                    <div class="card-switch">
+                        <p>Already have an account? <a href="#" class="switch-link" data-target="login">Login</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Welcome Screen (shown after successful login) -->
+            <div class="welcome-message" id="welcome-screen">
+                <div class="welcome-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Welcome to the Library System</h2>
+                <p>You have successfully logged in as <span class="user-role">Administrator</span>.</p>
+                <button class="logout-btn" id="logout-btn">Logout</button>
+            </div>
+
+            <!-- Decoration Bar -->
+            <div class="decoration"></div>
+        </div>
+    </div>
+
+    <script>
+     
+        // Role selection
+        const roleButtons = document.querySelectorAll('.role');
+        const roleText = document.querySelectorAll('.role-text');
+        const body = document.body;
+        const authCards = document.querySelectorAll('.auth-card');
+        const switchLinks = document.querySelectorAll('.switch-link');
+        const passwordToggles = document.querySelectorAll('.password-toggle');
+        const welcomeScreen = document.getElementById('welcome-screen');
+        const userRoleSpan = document.querySelector('.user-role');
+        const logoutBtn = document.getElementById('logout-btn');
+
+        // Role switching
+        roleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const role = button.getAttribute('data-role');
+                
+                // Update active role
+                roleButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Update body class
+                body.className = `${role}-mode`;
+                
+                // Update role text
+                const roleDisplay = {
+                    'admin': 'Administrator Access',
+                    'librarian': 'Librarian Access',
+                    'borrower': 'Borrower Access'
+                };
+                
+                roleText.forEach(text => {
+                    text.textContent = roleDisplay[role];
+                });
+                
+                // Update buttons
+                document.querySelectorAll('.btn').forEach(btn => {
+                    if (btn.classList.contains('logout-btn')) return;
+                    btn.className = `btn ${role}-btn`;
+                });
+                
+                // Update welcome message
+                const roleTitles = {
+                    'admin': 'Administrator',
+                    'librarian': 'Librarian',
+                    'borrower': 'Borrower'
+                };
+                userRoleSpan.textContent = roleTitles[role];
+            });
+        });
+
+        // Switch between login and register
+        switchLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('data-target');
+                
+                authCards.forEach(card => {
+                    card.classList.remove('active');
+                    if (card.id === `${target}-card`) {
+                        card.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Password visibility toggle
+        passwordToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const input = toggle.parentElement.querySelector('input');
+                const icon = toggle.querySelector('i');
+                
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                }
+            });
+        });
+
+        // Login form submission
+        // Login form submission
+document.getElementById('login-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const email = this.querySelector('input[type="email"]').value;
+    const password = this.querySelector('input[type="password"]').value;
+    
+    // Get current role (for UI updates, not sent to server)
+    const currentRole = document.querySelector('.role.active').getAttribute('data-role');
+    
+    // Prepare data for POST request
+    const loginData = {
+        email,
+        password
+    };
+    console.log(loginData)
+    
+    try {
+        // Send POST request to your backend
+        const response = await fetch('http://localhost:5000/api/user/logIn', { // Update with your actual login API URL
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(loginData),
+            credentials: 'include' // Important: This ensures cookies are sent with the request
+        });
+        
+        // Handle response
+        if (response.ok) {
+            const data = await response.json();
+            console.log('Login successful:', data);
+            
+            // Store user data in localStorage or sessionStorage if needed
+            localStorage.setItem('user', JSON.stringify(data.user));
+            window.location.href = 'http://localhost:5173/'
+            
+            // Update UI based on user's actual role from the server
+            const roleFromServer = data.user.role_name.toLowerCase();
+            
+            // Select the appropriate role button if it exists
+            const roleButtons = document.querySelectorAll('.role');
+            roleButtons.forEach(btn => {
+                if (btn.getAttribute('data-role') === roleFromServer) {
+                    // Update active role
+                    roleButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    
+                    // Update body class
+                    document.body.className = `${roleFromServer}-mode`;
+                }
+            });
+            
+            // Update welcome message with user's name and role
+            document.querySelector('.user-role').textContent = data.user.role_name;
+            
+            // Hide auth cards and show welcome screen
+            document.querySelectorAll('.auth-card').forEach(card => card.classList.remove('active'));
+            document.getElementById('welcome-screen').classList.add('active');
+            
+        } else {
+            const errorData = await response.json();
+            alert(`Login failed: ${errorData.message || 'Unknown error'}`);
+        }
+    } catch (error) {
+        console.error('Error during login:', error);
+        alert('Login failed: Network error');
+    }
+});
+
+        // Register form submission
+        document.getElementById('register-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const name = this.querySelector('input[type="text"]').value;
+    const email = this.querySelector('input[type="email"]').value;
+    const password = this.querySelectorAll('input[type="password"]')[0].value;
+    const confirmPassword = this.querySelectorAll('input[type="password"]')[1].value;
+    
+    // Get role_id based on selected role
+    const selectedRole = document.querySelector('.role.active').getAttribute('data-role');
+    let role_id;
+    switch(selectedRole) {
+        case 'admin':
+            role_id = 1; // Assuming 1 is the role_id for admin in your database
+            break;
+        case 'librarian':
+            role_id = 2; // Assuming 2 is the role_id for librarian
+            break;
+        case 'borrower':
+            role_id = 3; // Assuming 3 is the role_id for borrower
+            break;
+        default:
+            role_id = 3; // Default to borrower if something goes wrong
+    }
+    
+    // Validate passwords match
+    if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+    }
+    
+    // Prepare data for POST request - using the exact field names your API expects
+    const userData = {
+        name,         // Your backend expects 'name', not 'fullName'
+        email,
+        password,
+        role_id       // Your backend expects 'role_id', not 'role'
+    };
+    
+    try {
+        // Send POST request to your backend
+        const response = await fetch('http://localhost:5000/api/users', {  // Update with your actual API URL
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(userData)
+        });
+        
+        // Handle response
+        if (response.ok) {
+            const data = await response.json();
+            console.log('Registration successful:', data);
+            
+            // Switch to login form
+            document.querySelectorAll('.auth-card').forEach(card => card.classList.remove('active'));
+            document.getElementById('login-card').classList.add('active');
+            
+            // Show success message
+            alert('Registration successful! Please log in.');
+        } else {
+            const errorData = await response.json();
+            alert(`Registration failed: ${errorData.message || 'Unknown error'}`);
+        }
+    } catch (error) {
+        console.error('Error during registration:', error);
+        alert('Registration failed: Network error');
+    }
+});
+              // Logout button
+        logoutBtn.addEventListener('click', () => {
+            // Hide welcome screen
+            welcomeScreen.classList.remove('active');
+            
+            // Show login form
+            document.getElementById('login-card').classList.add('active');
+        });
+    </script>
+</body>
+</html>

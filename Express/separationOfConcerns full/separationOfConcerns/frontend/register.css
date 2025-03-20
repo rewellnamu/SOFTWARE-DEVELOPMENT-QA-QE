@@ -1,0 +1,486 @@
+:root {
+    --admin-color: #4361ee;
+    --librarian-color: #7209b7;
+    --borrower-color: #4cc9f0;
+    --gray-light: #f8f9fa;
+    --gray-dark: #343a40;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --radius: 12px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f6f8ff 0%, #e9f0ff 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: var(--transition);
+}
+
+.admin-mode {
+    background: linear-gradient(135deg, #e9f0ff 0%, #d1e0ff 100%);
+    background-image: url(background.jpg);
+    background-position: cover;
+    
+}
+
+.librarian-mode {
+    background: linear-gradient(135deg, #f3e7ff 0%, #e6d1ff 100%);
+}
+
+.borrower-mode {
+    background: linear-gradient(135deg, #e7f9ff 0%, #d1f3ff 100%);
+}
+
+.container {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    background-color: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        max-width: 400px;
+    }
+}
+
+.left-panel {
+    flex: 0 0 300px;
+    background-color: var(--gray-light);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .left-panel {
+        flex: 0 0 auto;
+        padding: 20px;
+    }
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--gray-dark);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    font-size: 28px;
+}
+
+.role-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gray-dark);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.roles {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.role {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+    gap: 15px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.role:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.role-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray-light);
+    transition: var(--transition);
+}
+
+.role-icon i {
+    font-size: 18px;
+    color: var(--gray-dark);
+    transition: var(--transition);
+}
+
+.role-info {
+    flex: 1;
+}
+
+.role-name {
+    font-weight: 600;
+    color: var(--gray-dark);
+    margin-bottom: 3px;
+}
+
+.role-desc {
+    font-size: 12px;
+    color: #6c757d;
+}
+
+/* Admin */
+.admin-role .role-icon {
+    background-color: rgba(67, 97, 238, 0.1);
+}
+
+.admin-role .role-icon i {
+    color: var(--admin-color);
+}
+
+.admin-role.active {
+    background-color: var(--admin-color);
+}
+
+.admin-role.active .role-icon {
+    background-color: white;
+}
+
+.admin-role.active .role-name,
+.admin-role.active .role-desc {
+    color: white;
+}
+
+/* Librarian */
+.librarian-role .role-icon {
+    background-color: rgba(114, 9, 183, 0.1);
+}
+
+.librarian-role .role-icon i {
+    color: var(--librarian-color);
+}
+
+.librarian-role.active {
+    background-color: var(--librarian-color);
+}
+
+.librarian-role.active .role-icon {
+    background-color: white;
+}
+
+.librarian-role.active .role-name,
+.librarian-role.active .role-desc {
+    color: white;
+}
+
+/* Borrower */
+.borrower-role .role-icon {
+    background-color: rgba(76, 201, 240, 0.1);
+}
+
+.borrower-role .role-icon i {
+    color: var(--borrower-color);
+}
+
+.borrower-role.active {
+    background-color: var(--borrower-color);
+}
+
+.borrower-role.active .role-icon {
+    background-color: white;
+}
+
+.borrower-role.active .role-name,
+.borrower-role.active .role-desc {
+    color: white;
+}
+
+.right-panel {
+    flex: 1;
+    padding: 40px;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .right-panel {
+        padding: 30px 20px;
+    }
+}
+
+.auth-card {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.auth-card.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.card-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gray-dark);
+    margin-bottom: 10px;
+}
+
+.role-text {
+    font-size: 16px;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #adb5bd;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1px solid #e9ecef;
+    border-radius: var(--radius);
+    font-size: 15px;
+    transition: var(--transition);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #adb5bd;
+    box-shadow: 0 0 0 3px rgba(173, 181, 189, 0.15);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #adb5bd;
+    cursor: pointer;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #495057;
+}
+
+.remember input {
+    margin: 0;
+}
+
+.forgot-link {
+    color: #6c757d;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.forgot-link:hover {
+    color: var(--gray-dark);
+    text-decoration: underline;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 20px;
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-btn {
+    background-color: var(--admin-color);
+}
+
+.librarian-btn {
+    background-color: var(--librarian-color);
+}
+
+.borrower-btn {
+    background-color: var(--borrower-color);
+}
+
+.card-switch {
+    text-align: center;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.switch-link {
+    color: var(--gray-dark);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.switch-link:hover {
+    text-decoration: underline;
+}
+
+.terms {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #495057;
+}
+
+.terms label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.terms a {
+    color: var(--gray-dark);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+.decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    transition: var(--transition);
+}
+
+.admin-mode .decoration {
+    background-color: var(--admin-color);
+}
+
+.librarian-mode .decoration {
+    background-color: var(--librarian-color);
+}
+
+.borrower-mode .decoration {
+    background-color: var(--borrower-color);
+}
+
+.welcome-message {
+    display: none;
+    animation: fadeIn 0.5s ease;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.welcome-message.active {
+    display: block;
+}
+
+.welcome-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: var(--admin-color);
+    transition: var(--transition);
+}
+
+.admin-mode .welcome-icon {
+    color: var(--admin-color);
+}
+
+.librarian-mode .welcome-icon {
+    color: var(--librarian-color);
+}
+
+.borrower-mode .welcome-icon {
+    color: var(--borrower-color);
+}
+
+.welcome-message h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--gray-dark);
+}
+
+.welcome-message p {
+    color: #6c757d;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.logout-btn {
+    background-color: var(--gray-light);
+    color: var(--gray-dark);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.logout-btn:hover {
+    background-color: #e9ecef;
+}
