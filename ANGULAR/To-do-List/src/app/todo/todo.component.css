@@ -1,0 +1,112 @@
+/* Reset Default Styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align to the top */
+  background-color: #f5f0f0;
+}
+
+/* Position the container at the top center */
+.container {
+  margin-top: 70px;
+  position: absolute;
+  top: 30px;  /* Adjusted for better spacing */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #cc0808;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 400px;
+}
+
+/* Task Input Fields */
+input {
+  width: 90%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  outline: none;
+  font-size: 16px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Buttons */
+button {
+  background: #ff9800;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #e68900;
+}
+
+/* Task List */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Task Item */
+li {
+  background: #e8f5e9;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Ensure task text takes up space */
+.task-content {
+  flex-grow: 1;
+  text-align: left; /* Align text properly */
+}
+
+/* Button Group (Aligns buttons neatly) */
+.button-group {
+  display: flex;
+  gap: 10px; /* Adds spacing between buttons */
+}
+
+/* Remove & Edit Buttons */
+button.remove {
+  background: #ff3d00;
+  color: white;
+  padding: 8px 12px;
+}
+
+button.remove:hover {
+  background: #d32f2f;
+}
+
+button.edit {
+  background: #1976d2;
+  color: white;
+  padding: 8px 12px;
+}
+
+button.edit:hover {
+  background: #1565c0;
+}
+h1{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  border-radius: 10px;
+}
