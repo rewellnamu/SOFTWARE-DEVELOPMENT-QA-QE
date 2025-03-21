@@ -1,9 +1,13 @@
 <div class="container">
   <h1>PLANTab SOFTWARE</h1>
   <h3>PLAN SMART</h3>
-  <h2>🌴</h2>  
+  <h2>🌴</h2>
   <input [(ngModel)]="newTask" placeholder="Enter a task" />
-  <input [(ngModel)]="taskDuration" type="number" placeholder="Duration (min)" />
+  <input
+    [(ngModel)]="taskDuration"
+    type="number"
+    placeholder="Duration (min)"
+  />
   <button (click)="addTask()">Add</button>
 
   <ul>
@@ -15,7 +19,11 @@
       </span>
       <span *ngIf="editingTaskId === task.id">
         <input [(ngModel)]="editedTask" placeholder="Edit task" />
-        <input type="number" [(ngModel)]="editedDuration" placeholder="Edit duration" />
+        <input
+          type="number"
+          [(ngModel)]="editedDuration"
+          placeholder="Edit duration"
+        />
         <button (click)="updateTask(task.id, i)">Save</button>
         <button (click)="editingTaskId = null">Cancel</button>
       </span>
