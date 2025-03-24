@@ -7,7 +7,7 @@ const router = express.Router();
 router.post("/register", registerUser);
 router.post("/login", loginUser);
 
-// Private Route (User must be logged in to log out)
+// Private Route 
 router.post("/logout", logoutUser);
 
 export default router;
