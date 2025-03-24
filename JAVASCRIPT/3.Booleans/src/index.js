@@ -4,7 +4,7 @@ const isStudent  = false
 
 //logically how can we apply  booleans 
 function showPaymentsModule(args) {
-    //this can be an angular/react component
+    
     if(args === true) {
         //show payment details
         console.log("You have the access rights to payments page")
