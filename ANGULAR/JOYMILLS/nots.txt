@@ -1,0 +1,15 @@
+my-angular-app/
+│── src/
+│   ├── app/                   # Main app folder
+│   │   ├── components/        # UI components
+│   │   ├── services/          # API calls
+│   │   ├── app.component.ts   # Main component
+│   │   ├── app.module.ts      # Main module
+│   │   ├── app-routing.module.ts # Routing configuration
+│   ├── assets/                # Static assets (images, etc.)
+│   ├── environments/          # Configurations for dev/prod
+│   ├── main.ts                # Application entry point
+│   ├── styles.scss            # Global styles
+│── angular.json               # Angular project configuration
+│── package.json               # Dependencies & scripts
+│── tsconfig.json              # TypeScript configuration
