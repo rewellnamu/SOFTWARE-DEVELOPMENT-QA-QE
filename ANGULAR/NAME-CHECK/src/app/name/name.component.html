@@ -1,0 +1,24 @@
+<!-- <form [formGroup]="nameForm" (ngSubmit)="onSubmit()">
+  <label for="name">Name:</label>
+  <input id="name" formControlName="name" />
+  <div *ngIf="nameForm.get('name')?.hasError('nameExists')">
+    Name already exists in the database.
+  </div>
+  <div *ngIf="nameForm.get('name')?.hasError('required')">
+    Name is required.
+  </div>
+  <button type="submit" [disabled]="nameForm.invalid">Submit</button>
+</form> -->
+
+<form [formGroup]="nameForm">
+    <label for="name">Enter Name:</label>
+    <input id="name" type="text" formControlName="name" />
+    <div *ngIf="name?.errors?.nameTaken">
+      Name already exists. Please choose another one.
+    </div>
+    <div *ngIf="name?.errors?.required">
+      Name is required.
+    </div>
+    
+  </form>
+  
