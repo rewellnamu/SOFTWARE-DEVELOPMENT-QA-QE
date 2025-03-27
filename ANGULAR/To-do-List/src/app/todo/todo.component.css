@@ -1,112 +1,73 @@
-/* Reset Default Styles */
-body, html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: flex-start; /* Align to the top */
-  background-color: #f5f0f0;
+.todo-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Position the container at the top center */
-.container {
-  margin-top: 70px;
-  position: absolute;
-  top: 30px;  /* Adjusted for better spacing */
-  left: 50%;
-  transform: translateX(-50%);
-  background: #cc0808;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+h1 {
   text-align: center;
-  width: 400px;
+  margin-bottom: 20px;
 }
 
-/* Task Input Fields */
-input {
-  width: 90%;
-  padding: 12px;
-  margin: 8px 0;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  outline: none;
-  font-size: 16px;
-  font-family: 'Courier New', Courier, monospace;
+.add-task-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-/* Buttons */
-button {
-  background: #ff9800;
-  color: #fff;
+.add-task-form input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.add-task-form button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
   border: none;
-  padding: 10px 15px;
-  font-size: 16px;
-  font-weight: bold;
+  border-radius: 4px;
   cursor: pointer;
-  border-radius: 6px;
-  transition: background 0.3s ease-in-out;
 }
 
-button:hover {
-  background: #e68900;
+.add-task-form button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
-/* Task List */
-ul {
+.task-list {
   list-style: none;
   padding: 0;
 }
 
-/* Task Item */
-li {
-  background: #e8f5e9;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 6px;
+.task-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 16px;
-  font-weight: bold;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
 }
 
-/* Ensure task text takes up space */
-.task-content {
-  flex-grow: 1;
-  text-align: left; /* Align text properly */
+.task-item button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-/* Button Group (Aligns buttons neatly) */
-.button-group {
+.task-item button:hover {
+  background-color: #0056b3;
+}
+
+.edit-task-form {
   display: flex;
-  gap: 10px; /* Adds spacing between buttons */
-}
-
-/* Remove & Edit Buttons */
-button.remove {
-  background: #ff3d00;
-  color: white;
-  padding: 8px 12px;
-}
-
-button.remove:hover {
-  background: #d32f2f;
-}
-
-button.edit {
-  background: #1976d2;
-  color: white;
-  padding: 8px 12px;
-}
-
-button.edit:hover {
-  background: #1565c0;
-}
-h1{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: white;
-  border-radius: 10px;
+  gap: 10px;
 }

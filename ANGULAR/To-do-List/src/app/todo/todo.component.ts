@@ -33,14 +33,16 @@ export class TodoComponent implements OnInit {
     if (this.newTask.trim() && this.taskDuration !== null && this.taskDuration > 0) {
       this.todoService.addTodo(this.user_id, this.newTask.trim(), this.taskDuration).subscribe(
         (newTask: any) => {
-          this.tasks.push(newTask);
-          this.newTask = '';
+          this.tasks.push(newTask); // Add the new task to the local list
+          this.newTask = ''; // Clear the input fields
           this.taskDuration = null;
         },
         (error: any) => {
           console.error("Error adding task:", error);
         }
       );
+    } else {
+      console.error("Invalid task or duration");
     }
   }
 

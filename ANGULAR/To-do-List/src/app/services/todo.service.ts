@@ -3,11 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root' // 
+  providedIn: 'root', //
 })
 export class TodoService {
-  private apiUrl = 'http://localhost:5000'; 
-  
+  private apiUrl = 'http://localhost:5000';
 
   constructor(private http: HttpClient) {}
 
@@ -17,8 +16,12 @@ export class TodoService {
   }
 
   // Add a new todo
-  addTodo(user_id: number, task: string, duration: Number): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/todos`, { user_id, task, duration });
+  addTodo(user_id: number, task: string, duration: number): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/todos`, {
+      user_id,
+      task,
+      duration,
+    });
   }
 
   // Fetch all users
@@ -29,7 +32,9 @@ export class TodoService {
     return this.http.delete(`http://localhost:5000/todos/${id}`);
   }
   updateTodo(id: number, task: string, duration: number) {
-    return this.http.put(`http://localhost:5000/todos/${id}`, { task, duration });
+    return this.http.put(`http://localhost:5000/todos/${id}`, {
+      task,
+      duration,
+    });
   }
-  
 }

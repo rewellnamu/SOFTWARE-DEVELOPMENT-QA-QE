@@ -1,32 +1,65 @@
-<div class="container">
-  <h1>PLANTab SOFTWARE</h1>
-  <h3>PLAN SMART</h3>
-  <h2>🌴</h2>
-  <input [(ngModel)]="newTask" placeholder="Enter a task" />
-  <input
-    [(ngModel)]="taskDuration"
-    type="number"
-    placeholder="Duration (min)"
-  />
-  <button (click)="addTask()">Add</button>
+<div class="todo-container">
+  <h1>To-Do List</h1>
 
-  <ul>
-    <li *ngFor="let task of tasks; let i = index">
-      <span *ngIf="editingTaskId !== task.id">
-        {{ task.task }} - {{ task.duration }} min
-        <button class="remove" (click)="removeTask(task.id, i)">Remove</button>
-        <button class="edit" (click)="edit(task.id, i)">Edit</button>
-      </span>
-      <span *ngIf="editingTaskId === task.id">
-        <input [(ngModel)]="editedTask" placeholder="Edit task" />
+  <!-- Add Task Form -->
+  <form (ngSubmit)="addTask()" class="add-task-form">
+    <input
+      type="text"
+      [(ngModel)]="newTask"
+      name="task"
+      placeholder="Enter new task"
+      required
+    />
+    <input
+      type="number"
+      [(ngModel)]="taskDuration"
+      name="duration"
+      placeholder="Duration (in minutes)"
+      required
+      min="1"
+    />
+    <button type="submit" [disabled]="!newTask || !taskDuration">
+      Add Task
+    </button>
+  </form>
+
+  <!-- Task List -->
+  <ul class="task-list">
+    <li *ngFor="let task of tasks; let i = index" class="task-item">
+      <div>
+        <span>{{ task.task }} ({{ task.duration }} mins)</span>
+      </div>
+    </li>
+  </ul>
+
+  <!-- Task List -->
+  <ul class="task-list">
+    <li *ngFor="let task of tasks; let i = index" class="task-item">
+      <!-- Display Task -->
+      <div *ngIf="editingTaskId !== task.id">
+        <span>{{ task.task }} ({{ task.duration }} mins)</span>
+        <button (click)="edit(task.id, i)">Edit</button>
+        <button (click)="removeTask(task.id, i)">Delete</button>
+      </div>
+
+      <!-- Edit Task -->
+      <div *ngIf="editingTaskId === task.id" class="edit-task-form">
+        <input
+          type="text"
+          [(ngModel)]="editedTask"
+          placeholder="Edit task"
+          required
+        />
         <input
           type="number"
           [(ngModel)]="editedDuration"
           placeholder="Edit duration"
+          required
+          min="1"
         />
-        <button (click)="updateTask(task.id, i)">Save</button>
+        <button (click)="updateTask(task.id, i)">Update</button>
         <button (click)="editingTaskId = null">Cancel</button>
-      </span>
+      </div>
     </li>
   </ul>
 </div>
