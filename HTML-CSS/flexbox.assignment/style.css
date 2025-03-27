@@ -1,4 +1,4 @@
-body{
+/* body{
     background-image: url(headphones-displayed-against-dark-background.jpg);
     background-size: cover;
 }
@@ -94,4 +94,103 @@ main{
     cursor: pointer;
     background-color: black;
     color: yellow;
+} */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Use full viewport height */
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
 }
+main {
+    flex: 1; /* Allow main to take up remaining space */
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    overflow-y: auto; /* Add scroll if content overflows */
+}
+  header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #f4f4f4;
+  }
+  
+  header nav img {
+    height: 50px;
+  }
+  
+  header nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+  }
+  
+  header nav a:hover {
+    color: #007bff;
+  }
+  
+  main {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .pay, .order {
+    width: 45%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  h2 {
+    margin-bottom: 10px;
+  }
+  
+  input[type="email"], input[type="password"], input[type="color"] {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  table td:first-child {
+    font-weight: bold;
+  }
+  #headphone {
+    width: 180px;
+    height: 50px;
+    border-radius: 8px;
+  }

@@ -1,73 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>flexbox assingment</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="hover-effect">
-    <nav>
-      <img id="logo" src="pexels-introspectivedsgn-9011349.jpg" alt="">
-      <a>HOME</a>
-      <a>SHOP</a>
-      <a>CONTACT</a>
-      <a>HELP</a>
-      <a style="margin-left: 100px;">ACCOUNT</a>
-      <a>Items</a>
-      <img id="profile" src="pexels-riccardo-parretti-145996493-10628684 (1).jpg" alt="">
-    </nav>
-    <hr>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Assignment</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="hover-effect">
+    <header>
+      <nav>
+        <img
+          id="logo"
+          src="./img/pexels-introspectivedsgn-9011349.jpg"
+          alt="Company Logo"
+        />
+        <a href="#">HOME</a>
+        <a href="#">SHOP</a>
+        <a href="#">CONTACT</a>
+        <a href="#">HELP</a>
+        <a href="#" style="margin-left: 100px">ACCOUNT</a>
+        <a href="#">ITEMS</a>
+        <img
+          id="profile"
+          src="./img/pexels-riccardo-parretti-145996493-10628684 (1).jpg"
+          alt="User Profile"
+        />
+      </nav>
+    </header>
+    <hr />
     <main>
-    <div class="pay">
-      <section class="box1">
-      <p>Account</p>
-      <p>Shipping</p>
-      <p>Payment</p>
-      </section>
-      <section class="accdetails">
-      <p>Account details</p>
-      <label id="mail">Email address</label><br>
-      <input type="email"><br>
-      <label id="mail">Password</label><br>
-      <input type="password">
-      </section>
-      <section class="foot">
-      <p>Register for account<a><button id="first">login</button></a></p>
-      </section>
-      <section class="final"><p>Cancel order<a href="T2G.org"><button id="first">Shipping details</button></a></p>
-      </section>
-      </section>
-    </div>
-    <div class="order">
-      <section class="vin">
-        <p>Order Summary</p>
-        <img id="headphone" src="pexels-garrettmorrow-610945.jpg" alt="">
-        <p>SOMO Wireless headphone</p>
-        <input type="range">
-        <P>Ksh 700</P>
-        <input type="color">
-        <button>Apply</button>
-       <section class="tab">
-        <table>
-          <tr>
-              <td>PRICE</td>
-              <td>KSH 700</td>
-        
-          </tr>
-          <tr>
-              <td>TAX</td>
-              <td> 16%</td>
-            
-          </tr>
-          <tr>
-              <td>TOTAL</td>
-              <td>KSH 716</td>
-              
-          </tr>
-      </table>
-      </section>
-    </div>
+      <!-- Payment Section -->
+      <div class="pay">
+        <section class="box1">
+          <p>Account</p>
+          <p>Shipping</p>
+          <p>Payment</p>
+        </section>
+        <section class="accdetails">
+          <h2>Account Details</h2>
+          <label for="email">Email Address</label><br />
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your email"
+            required
+          /><br />
+          <label for="password">Password</label><br />
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+          />
+        </section>
+        <section class="foot">
+          <p>
+            Register for account
+            <a href="#"><button id="first">Login</button></a>
+          </p>
+        </section>
+        <section class="final">
+          <p>
+            Cancel order
+            <a href="T2G.org"><button id="first">Shipping Details</button></a>
+          </p>
+        </section>
+      </div>
+
+      <!-- Order Summary Section -->
+      <div class="order">
+        <section class="vin">
+          <h2>Order Summary</h2>
+          <img
+            id="headphone"
+            src="./img/pexels-garrettmorrow-610945.jpg"
+            alt="SOMO Wireless Headphone"
+          />
+          <p>SOMO Wireless Headphone</p>
+          <label for="quantity">Adjust Quantity:</label>
+          <input type="range" id="quantity" min="1" max="10" />
+          <p>Ksh 700</p>
+          <label for="color">Choose Color:</label>
+          <input type="color" id="color" />
+          <button>Apply</button>
+          <section class="tab">
+            <table>
+              <tr>
+                <td>PRICE</td>
+                <td>KSH 700</td>
+              </tr>
+              <tr>
+                <td>TAX</td>
+                <td>16%</td>
+              </tr>
+              <tr>
+                <td>TOTAL</td>
+                <td>KSH 716</td>
+              </tr>
+            </table>
+          </section>
+        </section>
+      </div>
     </main>
-</body>
+  </body>
 </html>
