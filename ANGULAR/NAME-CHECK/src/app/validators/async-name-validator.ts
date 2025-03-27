@@ -1,6 +1,6 @@
 import { AbstractControl, AsyncValidatorFn, ValidationErrors } from '@angular/forms';
 
-const existingNames = ['JohnDoe', 'Subaru','Rewell Munene', 'Land Cruiser76' ,'JaneSmith', 'User123']; // Simulated database
+const existingNames = ['JohnDoe', 'JaneSmith', 'User123', 'subaru', 'town', 'kiboko', 'kasongo', 'ujana']; // Simulated database
 
 export function asyncNameValidator(): AsyncValidatorFn {
   return (control: AbstractControl): Promise<ValidationErrors | null> => {

@@ -1,43 +1,50 @@
 /* General form styling */
 form {
     max-width: 400px;
-    height: 400px;
+    height: 200px;
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: yellow; /* Retain the intended background color */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: yellow;
-  }
+}
   
-  /* Label styling */
-  label {
+/* Label styling */
+label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
     color: #333;
-  }
+}
   
-  /* Input field styling */
-  input {
-    width: 100%;
+/* Input field styling */
+input {
+    width: 50%;
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
-  }
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
   
-  /* Error message styling */
-  div {
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: #0056b3;
+}
+  
+/* Error message styling */
+div {
     color: red;
     font-size: 12px;
     margin-bottom: 10px;
-  }
+    font-weight: bold;
+}
   
-  /* Submit button styling */
-  button {
+/* Submit button styling */
+button {
     width: 100%;
     padding: 10px;
     background-color: #007bff;
@@ -46,9 +53,19 @@ form {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-  }
+    transition: background-color 0.3s, transform 0.2s;
+}
   
-  button:disabled {
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);
+}
+  
+button:active {
+    transform: scale(0.98);
+}
+  
+button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
-  }
+}

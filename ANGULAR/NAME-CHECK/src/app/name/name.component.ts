@@ -1,4 +1,4 @@
-import { Component, effect, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { asyncNameValidator } from '../validators/async-name-validator';
 import { NgIf } from '@angular/common';
@@ -12,14 +12,12 @@ import { NgIf } from '@angular/common';
       <label for="name">Enter Name:</label>
       <input id="name" type="text" [formControl]="nameControl" />
       <div *ngIf="nameControl.pending">Checking availability...</div>
-      <div *ngIf="nameControl.errors?.nameTaken">
+      <div *ngIf="nameControl.errors?.['nameTaken']">
         Name already exists. Please choose another one.
       </div>
-      <div *ngIf="nameControl.errors?.required">
-        Name is required.
-      </div>
+      <div *ngIf="nameControl.errors?.['required']">Name is required.</div>
     </form>
-  `
+  `,
 })
 export class NameComponent {
   nameControl = new FormControl('', {
@@ -29,8 +27,8 @@ export class NameComponent {
   });
 
   constructor() {
-    effect(() => {
-      console.log('Name value:', this.nameControl.value);
+    this.nameControl.valueChanges.subscribe((value) => {
+      console.log('Name value:', value);
     });
   }
 }
