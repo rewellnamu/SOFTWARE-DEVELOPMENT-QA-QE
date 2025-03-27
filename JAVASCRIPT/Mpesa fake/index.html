@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Withdrawal App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Withdraw Money</h2>
+        <p>Balance: <span id="balance">ksh12,000,000</span></p>
+        <input type="number" id="amount" placeholder="Enter amount" min="1">
+        <button onclick="withdrawMoney()">Withdraw</button>
+        <p id="message"></p>
+        <h3>Withdrawn Amounts:</h3>
+        <ul id="withdrawn-list"></ul>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
