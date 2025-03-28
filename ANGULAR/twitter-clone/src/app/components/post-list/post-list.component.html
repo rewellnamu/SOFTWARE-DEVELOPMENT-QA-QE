@@ -1,0 +1,8 @@
+<p>post-list works!</p>
+<h3>Posts</h3>
+<ul>
+  <li *ngFor="let post of posts" (click)="onPostClick(post.id)">
+    <h4>{{ post.title }}</h4>
+    <p>{{ post.body }}</p>
+  </li>
+</ul>

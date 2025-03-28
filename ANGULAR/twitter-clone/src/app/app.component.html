@@ -1,0 +1,3 @@
+<app-user-select (userChange)="onUserChange($event)"></app-user-select>
+<app-post-list [userId]="selectedUserId" (postChange)="onPostChange($event)"></app-post-list>
+<app-comment-list [postId]="selectedPostId"></app-comment-list>
