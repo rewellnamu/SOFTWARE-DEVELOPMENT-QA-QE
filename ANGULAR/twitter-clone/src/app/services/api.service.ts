@@ -1,10 +1,9 @@
-// filepath: src/app/services/api.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class ApiService {
   private usersUrl = 'https://jsonplaceholder.typicode.com/users';
@@ -17,11 +16,11 @@ export class ApiService {
     return this.http.get<any[]>(this.usersUrl);
   }
 
-  getPostsByUser(userId: number): Observable<any[]> {
+  getPosts(userId: number): Observable<any[]> {
     return this.http.get<any[]>(`${this.postsUrl}?userId=${userId}`);
   }
 
-  getCommentsByPost(postId: number): Observable<any[]> {
+  getComments(postId: number): Observable<any[]> {
     return this.http.get<any[]>(`${this.commentsUrl}?postId=${postId}`);
   }
 }

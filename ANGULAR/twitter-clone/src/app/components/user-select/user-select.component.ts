@@ -1,30 +1,34 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { ApiService } from '../../services/api.service';
-import { CommonModule } from '@angular/common';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { ApiService } from '../services/api.service';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-user-select',
   standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './user-select.component.html',
-  styleUrls: ['./user-select.component.css'],
+  imports: [FormsModule, CommonModule],
+  template: `
+    <select [(ngModel)]="selectedUserId" (change)="userSelected()">
+      <option *ngFor="let user of users" [value]="user.id">{{ user.username }}</option>
+    </select>
+  `,
 })
 export class UserSelectComponent implements OnInit {
-  users: any[] = [];
-  selectedUserId = 1; // Default user ID
-
   @Output() userChange = new EventEmitter<number>();
+  users: any[] = [];
+  selectedUserId: number = 1;
 
   constructor(private apiService: ApiService) {}
 
-  ngOnInit() {
-    this.apiService.getUsers().subscribe((data) => {
-      this.users = data;
+  ngOnInit(): void {
+   // this.apiService.getUsers().subscribe(users => {
+    this.apiService.getUsers().subscribe((users: any[]) => {
+      this.users = users;
+      this.userSelected(); // Trigger initial selection
     });
   }
 
-  onUserChange() {
+  userSelected(): void {
     this.userChange.emit(this.selectedUserId);
   }
 }

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Twitter": {
+    "twit": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/twitter",
+            "outputPath": "dist/twit",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Twitter:build:production"
+              "buildTarget": "twit:build:production"
             },
             "development": {
-              "buildTarget": "Twitter:build:development"
+              "buildTarget": "twit:build:development"
             }
           },
           "defaultConfiguration": "development"

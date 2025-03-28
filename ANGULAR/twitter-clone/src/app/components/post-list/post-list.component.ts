@@ -1,35 +1,35 @@
-import { Component, Input, OnChanges, Output, EventEmitter } from '@angular/core';
-import { ApiService } from '../../services/api.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { ApiService } from '../services/api.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-post-list',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './post-list.component.html',
-  styleUrls: ['./post-list.component.css'],
+  template: `
+    <div *ngFor="let post of posts" (click)="selectPost(post.id)">
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.body }}</p>
+    </div>
+  `,
 })
-export class PostListComponent implements OnChanges {
-  @Input() userId!: number;
-  @Output() postChange = new EventEmitter<number>();
+export class PostListComponent implements OnInit {
+  @Input() userId: number = 1;
+  @Output() postSelect = new EventEmitter<number>();
   posts: any[] = [];
-  selectedPostId!: number;
 
   constructor(private apiService: ApiService) {}
 
-  ngOnChanges() {
-    if (this.userId) {
-      this.apiService.getPostsByUser(this.userId).subscribe((data) => {
-        this.posts = data;
-        if (this.posts.length > 0) {
-          this.selectedPostId = this.posts[0].id;
-          this.postChange.emit(this.selectedPostId);
-        }
-      });
-    }
+  ngOnInit(): void {
+    this.apiService.getPosts(this.userId).subscribe(posts => {
+      this.posts = posts;
+      if (posts.length > 0) {
+        this.selectPost(posts[0].id); // Select first post by default
+      }
+    });
   }
 
-  onPostClick(postId: number) {
-    this.postChange.emit(postId);
+  selectPost(postId: number): void {
+    this.postSelect.emit(postId);
   }
 }
