@@ -25,7 +25,7 @@ interface User {
   template: `
     <div class="app-container">
       <div class="header">
-        <select (change)="onUserChange()">
+        <select ngClass="onUserChange()">
           <option *ngFor="let user of users" [value]="user.id">
             {{ user.username }}
           </option>

@@ -1,0 +1,11 @@
+<main class="main">
+  <div class="content">
+    <app-user-select (userChange)="onUserChange($event)"></app-user-select>
+    <app-post-list
+      [userId]="selectedUserId"
+      (postSelect)="onPostSelect($event)"
+    ></app-post-list>
+    <app-comment-list [postId]="selectedPostId"></app-comment-list>
+  </div>
+</main>
+<router-outlet></router-outlet>
