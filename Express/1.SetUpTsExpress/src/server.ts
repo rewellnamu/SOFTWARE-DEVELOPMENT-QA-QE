@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import { readFileSync } from "fs"
 import path from 'path'
 import cors from "cors"
+import { isUtf8 } from "buffer"
 
 //configure the dotenv 
 dotenv.config()
@@ -18,7 +19,7 @@ console.log(port) //3000
 //eneable CORS for all origins  
 //app.use(cors())
 
-//enable cors with optiosn (RECOMMENDED)
+//enable cors with options (RECOMMENDED)
 //To allow only http://localhost:5173:
 app.use(cors({
     origin: "http://localhost:5173",
@@ -29,7 +30,8 @@ app.use(cors({
 //get the current  directory 
 const _dirname = path.resolve()
 
-//synchronously read the file
+//synchronously read the file from our db folder
+//this is a json file that contains the events data
 const eventData = readFileSync(
     path.join(_dirname, "src", "db", "eventsData.json"), "utf-8"
 )
@@ -41,15 +43,17 @@ app.get('/', (req, res) => {
 
     res.send(`Hello World, Be humble to us`)
 })
-
-app.get('/api/events', (req, res) => {
+//a simple get request from our db folder
+//this will return the events data in json format
+app.get('/events', (req, res) => {
 
     res.send(eventData)
 })
 
-// create server 
+// create server that listens on port 1995
+//this will return the events data in json format
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`)
 })
 
-//SOC - separtion of concersn 
+//SOC - separtion of concerns 

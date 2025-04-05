@@ -57,9 +57,12 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/eventsData', (req, res) => {
-    //res.send(eventData)
+    res.send(eventData)
 })
 
+app.get('/api/events', (req, res) => {
+    res.send(events)
+})
 
 //Now, let's create a GET API route that filters events based on query parameters
 app.get('/api/eventsFilter', (req:Request, res:Response) => {
