@@ -1,0 +1,90 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+.job-seeker-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.job-seeker-header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 0;
+}
+
+.job-seeker-header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.job-seeker-header p {
+  margin: 10px 0 0;
+  font-size: 1.2em;
+}
+
+.job-search {
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.job-search form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.job-search form input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.job-search form button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.job-search form button:hover {
+  background-color: #45a049;
+}
+
+.job-listings {
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.job-listings h2 {
+  margin-bottom: 15px;
+}
+
+.job-seeker-footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.job-seeker-footer p {
+  margin: 0;
+  font-size: 0.9em;
+}

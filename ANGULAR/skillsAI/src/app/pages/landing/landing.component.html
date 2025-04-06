@@ -1,0 +1,82 @@
+<div class="landing-page">
+  <header class="header">
+    <h1>Welcome to SkillsAI</h1>
+    <p>Your gateway to mastering new skills.</p>
+    <button (click)="navigateToLogin()">Login</button>
+  </header>
+
+  <section class="features">
+    <h2>Our Features</h2>
+    <ul>
+      <li>Interactive Learning</li>
+      <li>Expert Guidance</li>
+      <li>Progress Tracking</li>
+    </ul>
+  </section>
+
+  <div class="button-group">
+    <button routerLink="/signup" class="signup-button">Sign Up</button>
+    <button routerLink="/admin" class="admin-button">Admin</button>
+    <button routerLink="/employer" class="employer-button">Employer</button>
+    <button routerLink="/job-seeker" class="job-seeker-button">
+      Job Seeker
+    </button>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2023 SkillsAI. All rights reserved.</p>
+  </footer>
+</div>
+
+<style>
+  .button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .button-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .signup-button {
+    background-color: #4caf50;
+    color: white;
+  }
+
+  .signup-button:hover {
+    background-color: #45a049;
+  }
+
+  .admin-button {
+    background-color: #f44336;
+    color: white;
+  }
+
+  .admin-button:hover {
+    background-color: #da190b;
+  }
+
+  .employer-button {
+    background-color: #008cba;
+    color: white;
+  }
+
+  .employer-button:hover {
+    background-color: #007bb5;
+  }
+
+  .job-seeker-button {
+    background-color: #ff9800;
+    color: white;
+  }
+
+  .job-seeker-button:hover {
+    background-color: #e68a00;
+  }
+</style>
