@@ -1,0 +1,195 @@
+<header>
+    <div class="logo">
+      <span class="brand">KAZI-<span class="ai">AI</span></span>
+      <div class="home-icon">🏠</div>
+    </div>
+    <nav>
+      <button>JOB SEEKER</button>
+      <button>EMPLOYER</button>
+      <button>ADMINISTRATOR</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1><span class="blue">AI-</span><span class="white">Powered</span></h1>
+      <h2>Intelligence</h2>
+      <p>Transform your business operations with cutting-edge AI solutions that adapt and grow with your needs</p>
+      <div class="cta-buttons">
+        <button class="login">LOGIN</button>
+        <button class="signup">SIGN UP</button>
+      </div>
+    </section>
+
+    <section class="logo-section">
+      <div class="image-container">
+        <img src="" alt="Logo"/>
+      </div>
+    </section>
+
+    <section class="features">
+      <h3>Why Choose KAZI-AI?</h3>
+      <div class="feature-cards">
+        <div class="card">
+          <h4>⚡ Lightning Fast</h4>
+          <p>Process data and generate insights in milliseconds with our optimized AI engine</p>
+        </div>
+        <div class="card">
+          <h4>🔒 Secure & Private</h4>
+          <p>Enterprise-grade security with end-to-end encryption and compliance standards</p>
+        </div>
+        <div class="card">
+          <h4>🏆 Award Winner</h4>
+          <p>kazi-ai Awards<br>Keiko AI Awards<br>AI Expo 2024</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-container">
+      <button class="chatbot-toggle" onclick="toggleChatbot()">💬 Chat with us</button>
+      <div class="chatbot-widget" id="chatbotWidget">
+        <div class="chatbot-header">
+          <h4>Chatbot</h4>
+          <button class="close-chatbot" onclick="toggleChatbot()">✖</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+          <!-- Chat messages will appear here -->
+        </div>
+        <div class="chatbot-input">
+          <input type="text" id="chatbotInput" placeholder="Type your message..." onkeypress="handleChatInput(event)">
+          <button onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const chatbotWidget = document.getElementById('chatbotWidget');
+      const chatbotMessages = document.getElementById('chatbotMessages');
+      const chatbotInput = document.getElementById('chatbotInput');
+
+      function toggleChatbot() {
+        chatbotWidget.classList.toggle('active');
+      }
+
+      function handleChatInput(event) {
+        if (event.key === 'Enter') {
+          sendMessage();
+        }
+      }
+
+      function sendMessage() {
+        const userMessage = chatbotInput.value.trim();
+        if (!userMessage) return;
+
+        // Display user message
+        const userMessageElement = document.createElement('div');
+        userMessageElement.className = 'chatbot-message user-message';
+        userMessageElement.textContent = userMessage;
+        chatbotMessages.appendChild(userMessageElement);
+
+        chatbotInput.value = '';
+
+        // Simulate bot response
+        setTimeout(() => {
+          const botMessageElement = document.createElement('div');
+          botMessageElement.className = 'chatbot-message bot-message';
+          botMessageElement.textContent = `You said: "${userMessage}". How can I assist you further?`;
+          chatbotMessages.appendChild(botMessageElement);
+
+          chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+        }, 1000);
+      }
+    </script>
+
+    <style>
+      .chatbot-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+
+      .chatbot-toggle {
+        background-color: #2575fc;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .chatbot-widget {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 300px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .chatbot-widget.active {
+        display: flex;
+      }
+
+      .chatbot-header {
+        background: #2575fc;
+        color: white;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .chatbot-messages {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+        max-height: 300px;
+      }
+
+      .chatbot-message {
+        margin: 5px 0;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      .user-message {
+        background: #2575fc;
+        color: white;
+        align-self: flex-end;
+      }
+
+      .bot-message {
+        background: #f1f1f1;
+        color: #333;
+        align-self: flex-start;
+      }
+
+      .chatbot-input {
+        display: flex;
+        border-top: 1px solid #ddd;
+      }
+
+      .chatbot-input input {
+        flex: 1;
+        padding: 10px;
+        border: none;
+        outline: none;
+      }
+
+      .chatbot-input button {
+        background: #2575fc;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+    </style>
+  </main>

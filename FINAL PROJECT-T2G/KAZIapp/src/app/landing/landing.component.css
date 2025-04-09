@@ -1,0 +1,164 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #c07b75;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #e28f89;
+    color: #fff;
+    text-align: center;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #2200ff;
+  }
+  
+  .brand .ai {
+    color: #ff69b4;
+  }
+  
+  .home-icon {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  nav button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .hero {
+    margin-top: 2rem;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero .blue {
+    color: #3b3bff;
+  }
+  
+  .hero .white {
+    color: #fff;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    color: #eee;
+  }
+  
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-buttons .login {
+    background-color: #2200ff;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    color: white;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+  .cta-buttons .signup {
+    background-color: #f6d5d3;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    color: black;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  
+  .logo-section {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+  }
+  
+  .image-container {
+    background: radial-gradient(circle, #c07b75 0%, #00000030 100%);
+    padding: 2rem;
+    border-radius: 20px;
+  }
+  
+  .image-container img {
+    width: 250px;
+    height: auto;
+  }
+  
+  .features {
+    margin: 2rem 0;
+  }
+  
+  .features h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .feature-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .card {
+    background: #111;
+    color: white;
+    padding: 1rem;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: left;
+  }
+  
+  .card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .card p {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  

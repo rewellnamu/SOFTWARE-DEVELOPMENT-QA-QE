@@ -1,0 +1,116 @@
+<body class="dashboard-body-bg"> <div class="dashboard-layout">
+        <header class="page-header">
+            <div class="logo">KAZI-AI</div>
+            <nav class="header-nav">
+                <button type="button" class="header-button ai-assistant-btn">AI Assistant</button>
+                <button type="button" class="header-button post-job-btn">Post Job</button>
+                <button type="button" class="header-button chatbot-btn">Chatbot</button>
+            </nav>
+        </header>
+
+        <div class="dashboard-body">
+            <aside class="dashboard-sidebar">
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li class="active"> <a href="#">
+                                <i class="fas fa-tachometer-alt fa-fw"></i> <span class="link-text">Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-users fa-fw"></i> <span class="link-text">Candidates</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-briefcase fa-fw"></i> <span class="link-text">Jobs</span>
+                            </a>
+                        </li>
+                        <li>
+                             <a href="#">
+                                <i class="fas fa-calendar-alt fa-fw"></i> <span class="link-text">Interviews</span>
+                            </a>
+                        </li>
+                         <li>
+                             <a href="#">
+                                <i class="fas fa-chart-bar fa-fw"></i> <span class="link-text">Analytics</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="dashboard-content employer-dashboard"> <section class="stats-row">
+                    <div class="stat-card">
+                        <p class="stat-title">Total Applications</p>
+                        <p class="stat-value">156</p>
+                    </div>
+                     <div class="stat-card">
+                        <p class="stat-title">Qualified Candidates</p>
+                        <p class="stat-value">45</p>
+                    </div>
+                     <div class="stat-card">
+                        <p class="stat-title">Interviews Scheduled</p>
+                        <p class="stat-value">12</p>
+                    </div>
+                     <div class="stat-card">
+                        <p class="stat-title">Offers Sent</p>
+                        <p class="stat-value">5</p>
+                    </div>
+                </section>
+
+                <section class="panels-row">
+                    <div class="dashboard-panel recent-candidates">
+                        <h3>Recent Candidates</h3>
+                        <ul class="candidate-list">
+                            <li class="candidate-item">
+                                <div class="candidate-info">
+                                    <span class="candidate-name">Sarah Chen</span>
+                                    <span class="candidate-title">Senior ML Engineer</span>
+                                </div>
+                                <span class="match-badge">95% Match</span>
+                            </li>
+                            <li class="candidate-item">
+                                <div class="candidate-info">
+                                    <span class="candidate-name">James Wilson</span>
+                                    <span class="candidate-title">Data Scientist</span>
+                                </div>
+                                <span class="match-badge">88% Match</span>
+                            </li>
+                             <li class="candidate-item">
+                                <div class="candidate-info">
+                                    <span class="candidate-name">Elena Rodriguez</span>
+                                    <span class="candidate-title">AI Developer</span>
+                                </div>
+                                <span class="match-badge">85% Match</span>
+                            </li>
+                            </ul>
+                    </div>
+
+                    <div class="dashboard-panel upcoming-interviews">
+                        <h3>Upcoming Interviews</h3>
+                        <p class="placeholder-text">No upcoming interviews scheduled.</p>
+                    </div>
+                </section>
+
+                <section class="chatbot-container">
+                    <div class="chatbot-interface">
+                        <div class="chatbot-header">
+                            <h3>Chat with KAZI-AI</h3>
+                            <button type="button" class="close-chatbot-btn">X</button>
+                        </div>
+                        <div class="chatbot-messages">
+                            <!-- Chat messages will appear here -->
+                        </div>
+                        <div class="chatbot-input">
+                            <input type="text" placeholder="Type your message..." />
+                            <button type="button" class="send-message-btn">Send</button>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+</body>

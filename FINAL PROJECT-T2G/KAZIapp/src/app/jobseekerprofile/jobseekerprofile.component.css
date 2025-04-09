@@ -1,0 +1,258 @@
+/* --- Basic Reset & Font --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    /* Default text color can be set here if needed */
+}
+
+/* --- Page Backgrounds --- */
+.dashboard-body-bg { /* Specific for this dashboard layout */
+     /* The main content area has the red bg, body can be neutral or match sidebar */
+     background-color: #1e1e1e; /* Match sidebar */
+}
+/* Keep other background classes if needed */
+.page-background { background-color: #a56a6a; }
+.admin-page-background { background-color: #a56a6a; }
+body:not(.page-background):not(.admin-page-background):not(.dashboard-body-bg) { background-color: #e8c3c3; }
+
+/* --- Dashboard Layout --- */
+.dashboard-layout {
+    display: flex;
+    flex-direction: column; /* Stack header above body */
+    min-height: 100vh;
+}
+
+.dashboard-body {
+    display: flex;
+    flex-grow: 1; /* Allow body to fill remaining height */
+}
+
+/* --- Reusable Page Header --- */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 2%; /* Adjust padding slightly */
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333;
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.logo { color: #4a90e2; font-size: 1.5em; font-weight: bold; }
+.header-nav { display: flex; gap: 15px; }
+.header-button { padding: 8px 18px; border: none; border-radius: 6px; color: #fff; cursor: pointer; font-weight: 500; font-size: 0.9em; transition: background-color 0.2s ease; }
+.chat-btn { background-color: #3f3f3f; } /* Dark grey */
+.chat-btn:hover { background-color: #555; }
+.update-cv-btn { background-color: #6a1b9a; } /* Purple */
+.update-cv-btn:hover { background-color: #5a148a; }
+/* --- End Header --- */
+
+
+/* --- Dashboard Sidebar --- */
+.dashboard-sidebar {
+    width: 240px; /* Fixed width */
+    background-color: #1e1e1e; /* Dark background */
+    padding: 25px 0; /* Vertical padding */
+    flex-shrink: 0; /* Prevent shrinking */
+    border-right: 1px solid #333; /* Separator */
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px; /* Padding */
+    color: #ccc;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 0.95em;
+    border-left: 4px solid transparent; /* Placeholder for active border */
+}
+
+.sidebar-nav li a:hover {
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+.sidebar-nav li a i { /* Icon styling */
+    margin-right: 15px;
+    width: 20px; /* Fixed width for alignment */
+    text-align: center;
+    color: #888; /* Icon color */
+    font-size: 1.1em; /* Icon size */
+    transition: color 0.2s ease;
+}
+
+.sidebar-nav li a:hover i {
+    color: #ccc; /* Icon color on hover */
+}
+
+.sidebar-nav li.active a { /* Active link style */
+    background-color: #111; /* Slightly darker active background */
+    color: #fff;
+    font-weight: 500;
+    border-left: 4px solid #4a90e2; /* Blue active indicator */
+    padding-left: 21px; /* Adjust padding to compensate for border */
+}
+
+.sidebar-nav li.active a i {
+    color: #fff; /* Active icon color */
+}
+
+/* --- Dashboard Main Content --- */
+.dashboard-content {
+    flex-grow: 1; /* Take remaining width */
+    background-color: #c74440; /* Red background matching image */
+    padding: 40px; /* Padding around content */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+/* --- Profile Card --- */
+.profile-card {
+    background-color: #1e1e1e; /* Dark card background */
+    padding: 30px 35px;
+    border-radius: 10px;
+    color: #ccc;
+    max-width: 850px; /* Limit card width */
+    margin: 0 auto 40px auto; /* Center card horizontally, add bottom margin */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Space between image and info */
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #333; /* Separator */
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Circular picture */
+    object-fit: cover; /* Cover the area */
+    border: 3px solid #444; /* Optional border */
+    flex-shrink: 0;
+}
+
+.profile-info {
+    flex-grow: 1;
+}
+
+.profile-info h2 {
+    color: #fff;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.profile-title {
+    color: #aaa;
+    font-size: 1.05em; /* Slightly larger title */
+    margin-bottom: 18px;
+}
+
+.edit-profile-btn {
+    background-color: #6a1b9a; /* Purple */
+    color: #fff;
+    border: none;
+    padding: 7px 18px; /* Adjusted padding */
+    border-radius: 5px;
+    font-size: 0.9em; /* Adjusted size */
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.edit-profile-btn:hover {
+    background-color: #5a148a;
+}
+
+.profile-section {
+    margin-bottom: 30px;
+}
+.profile-section:last-child {
+    margin-bottom: 0; /* Remove margin from last section */
+}
+
+.profile-section h3 {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 1.15em;
+}
+
+.profile-section p {
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 0.95em;
+    margin-bottom: 5px; /* Space between contact lines */
+}
+
+/* --- Log Out Area --- */
+.logout-area {
+    text-align: center;
+    margin-top: 30px; /* Add space above button if needed */
+}
+
+.logout-button {
+    background-color: #d9534f; /* Red button */
+    color: #fff;
+    border: none;
+    padding: 12px 45px; /* Generous padding */
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 0.5px;
+}
+.logout-button:hover {
+    background-color: #c9302c; /* Darker red */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .dashboard-sidebar {
+        width: 70px; /* Collapse sidebar width */
+    }
+    /* Hide text, show only icons */
+    .sidebar-nav li a .link-text { display: none; }
+    .sidebar-nav li a { justify-content: center; padding: 15px 10px; }
+    .sidebar-nav li a i { margin-right: 0; font-size: 1.3em; }
+    .sidebar-nav li.active a { padding-left: 10px; } /* Adjust active padding */
+
+    .profile-header { flex-direction: column; align-items: flex-start; gap: 15px;}
+    .profile-picture { width: 80px; height: 80px; }
+    .profile-info h2 { font-size: 1.5em; }
+}
+
+@media (max-width: 768px) {
+    .dashboard-body { flex-direction: column; } /* Stack sidebar above content */
+    .dashboard-sidebar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid #333; padding: 10px 0; }
+    .sidebar-nav ul { display: flex; justify-content: space-around; } /* Horizontal links */
+    .sidebar-nav li a { padding: 10px; border-left: none !important; } /* Remove left border */
+    .sidebar-nav li.active a { background-color: transparent; border-bottom: 3px solid #4a90e2; padding-bottom: 7px; } /* Use bottom border */
+    .sidebar-nav li a i { font-size: 1.4em; } /* Slightly larger icons */
+
+    .dashboard-content { padding: 25px; }
+    .profile-card { padding: 20px 25px; }
+}
+
+@media (max-width: 600px) {
+    .page-header { padding: 10px 3%; }
+    .header-nav { gap: 10px; }
+    .header-button { padding: 6px 10px; font-size: 0.8em; }
+    .profile-card { padding: 15px 20px; }
+}

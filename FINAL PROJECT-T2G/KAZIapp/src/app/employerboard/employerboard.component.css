@@ -1,0 +1,200 @@
+/* --- Basic Reset & Font --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+
+/* --- Page Backgrounds --- */
+.dashboard-body-bg { background-color: #1e1e1e; }
+.page-background { background-color: #a56a6a; }
+.admin-page-background { background-color: #a56a6a; }
+body:not(.page-background):not(.admin-page-background):not(.dashboard-body-bg) { background-color: #e8c3c3; }
+
+/* --- Dashboard Layout --- */
+.dashboard-layout { display: flex; flex-direction: column; min-height: 100vh; }
+.dashboard-body { display: flex; flex-grow: 1; }
+
+/* --- Reusable Page Header --- */
+.page-header { display: flex; justify-content: space-between; align-items: center; padding: 15px 2%; background-color: #1e1e1e; border-bottom: 1px solid #333; flex-shrink: 0; }
+.logo { color: #4a90e2; font-size: 1.5em; font-weight: bold; }
+.header-nav { display: flex; gap: 15px; }
+.header-button { padding: 8px 18px; border: none; border-radius: 6px; color: #fff; cursor: pointer; font-weight: 500; font-size: 0.9em; transition: background-color 0.2s ease; }
+/* Specific Header Buttons for Employer Dashboard */
+.ai-assistant-btn { background-color: #3f3f3f; }
+.ai-assistant-btn:hover { background-color: #555; }
+.post-job-btn { background-color: #6a1b9a; } /* Purple */
+.post-job-btn:hover { background-color: #5a148a; }
+/* --- End Header --- */
+
+/* --- Dashboard Sidebar --- */
+.dashboard-sidebar { width: 240px; background-color: #1e1e1e; padding: 25px 0; flex-shrink: 0; border-right: 1px solid #333; }
+.sidebar-nav ul { list-style: none; padding: 0; margin: 0; }
+.sidebar-nav li a { display: flex; align-items: center; padding: 12px 25px; color: #ccc; text-decoration: none; transition: background-color 0.2s ease, color 0.2s ease; font-size: 0.95em; border-left: 4px solid transparent; }
+.sidebar-nav li a:hover { background-color: #2a2a2a; color: #fff; }
+.sidebar-nav li a i { margin-right: 15px; width: 20px; text-align: center; color: #888; font-size: 1.1em; transition: color 0.2s ease; }
+.sidebar-nav li a:hover i { color: #ccc; }
+.sidebar-nav li.active a { background-color: #111; color: #fff; font-weight: 500; border-left: 4px solid #4a90e2; padding-left: 21px; }
+.sidebar-nav li.active a i { color: #fff; }
+
+/* --- Dashboard Main Content --- */
+.dashboard-content { flex-grow: 1; background-color: #c74440; /* Red background */ padding: 35px; /* Padding */ overflow-y: auto; }
+
+/* --- Stats Row --- */
+.stats-row {
+    display: grid;
+    /* Create 4 equal columns */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px; /* Gap between cards */
+    margin-bottom: 35px; /* Space below stats */
+}
+
+.stat-card {
+    background-color: #1e1e1e; /* Dark card background */
+    padding: 20px 25px;
+    border-radius: 8px;
+    /* text-align: center; */ /* Or keep left-aligned */
+}
+
+.stat-title {
+    color: #aaa;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    color: #fff;
+    font-size: 2.4em; /* Large value text */
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+/* --- Panels Row --- */
+.panels-row {
+    display: grid;
+    /* Create 2 equal columns */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px; /* Gap between panels */
+}
+
+.dashboard-panel {
+    background-color: #1e1e1e; /* Dark panel background */
+    padding: 25px 30px;
+    border-radius: 10px; /* Slightly larger radius */
+}
+
+.dashboard-panel h3 {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 25px; /* Space below title */
+    font-size: 1.2em;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333; /* Title separator */
+}
+
+/* Recent Candidates Panel */
+.candidate-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.candidate-item {
+    display: flex;
+    justify-content: space-between; /* Push info left, badge right */
+    align-items: center;
+    padding: 15px 0; /* Vertical padding */
+    border-bottom: 1px solid #333; /* Separator line */
+}
+.candidate-item:last-child {
+    border-bottom: none; /* Remove border from last item */
+    padding-bottom: 5px; /* Adjust padding if needed */
+}
+.candidate-item:first-child {
+    padding-top: 0; /* Remove padding from first item */
+}
+
+
+.candidate-name {
+    color: #fff;
+    display: block;
+    font-weight: 500;
+    margin-bottom: 4px;
+    font-size: 1em;
+}
+
+.candidate-title {
+    color: #aaa;
+    font-size: 0.85em;
+    display: block;
+}
+
+.match-badge {
+    background-color: #6a1b9a; /* Purple badge */
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 15px; /* Pill shape */
+    font-size: 0.8em;
+    font-weight: 500;
+    white-space: nowrap; /* Prevent wrapping */
+    margin-left: 15px; /* Ensure space from text */
+}
+
+/* Placeholder Text (for empty panels) */
+.placeholder-text {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1200px) {
+    .stats-row {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+    .panels-row {
+        grid-template-columns: 1fr; /* Stack panels */
+    }
+}
+
+@media (max-width: 992px) {
+    /* Sidebar collapse styles (from previous example) */
+    .dashboard-sidebar { width: 70px; }
+    .sidebar-nav li a .link-text { display: none; }
+    .sidebar-nav li a { justify-content: center; padding: 15px 10px; }
+    .sidebar-nav li a i { margin-right: 0; font-size: 1.3em; }
+    .sidebar-nav li.active a { padding-left: 10px; }
+
+    .dashboard-content { padding: 25px; }
+}
+
+@media (max-width: 768px) {
+     /* Sidebar horizontal stack styles (from previous example) */
+    .dashboard-body { flex-direction: column; }
+    .dashboard-sidebar { width: 100%; height: auto; border-right: none; border-bottom: 1px solid #333; padding: 10px 0; }
+    .sidebar-nav ul { display: flex; justify-content: space-around; }
+    .sidebar-nav li a { padding: 10px; border-left: none !important; }
+    .sidebar-nav li.active a { background-color: transparent; border-bottom: 3px solid #4a90e2; padding-bottom: 7px; }
+    .sidebar-nav li a i { font-size: 1.4em; }
+
+     .stats-row { grid-template-columns: 1fr; gap: 15px; } /* Stack all stats cards */
+     .stat-card { padding: 15px 20px;}
+     .stat-value { font-size: 2em;}
+}
+
+@media (max-width: 600px) {
+    .page-header { padding: 10px 3%; }
+    .header-nav { gap: 10px; }
+    .header-button { padding: 6px 10px; font-size: 0.8em; }
+    .dashboard-content { padding: 20px; }
+    .dashboard-panel { padding: 20px 25px;}
+}
+
+/* --- Include previous form styles below if needed in the same file --- */
+/* --- Form Container Styles --- */
+/* .form-container { ... } */
+/* --- Input/Label/Button/Checkbox etc. styles --- */
+/* label { ... } */
+/* input[type="text"], etc. { ... } */
+/* select { ... } */
+/* .submit-button { ... } */
+/* .checkbox-group { ... } */
+/* ... etc ... */

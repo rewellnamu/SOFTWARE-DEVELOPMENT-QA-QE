@@ -1,0 +1,114 @@
+<body class="dashboard-body-bg"> <div class="dashboard-layout">
+        <header class="page-header admin-header"> <div class="logo-block">
+                 <span class="logo">KAZI-AI</span>
+                 <span class="header-title">Admin Dashboard</span>
+            </div>
+            <nav class="header-nav">
+                <button type="button" class="header-button settings-btn">Settings</button>
+                <button type="button" class="header-button admin-profile-btn">Admin Profile</button>
+            </nav>
+        </header>
+
+        <div class="dashboard-body">
+            <aside class="dashboard-sidebar">
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li class="active"> <a href="#">
+                                <i class="fas fa-home fa-fw"></i> <span class="link-text">Overview</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-users fa-fw"></i> <span class="link-text">Users</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-shield-alt fa-fw"></i> <span class="link-text">Security</span>
+                            </a>
+                        </li>
+                        <li>
+                             <a href="#">
+                                <i class="fas fa-brain fa-fw"></i> <span class="link-text">AI Performance</span>
+                            </a>
+                        </li>
+                         <li>
+                             <a href="#">
+                                <i class="fas fa-cogs fa-fw"></i> <span class="link-text">System</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="dashboard-content admin-dashboard-content"> <section class="stats-row">
+                    <div class="stat-card">
+                        <p class="stat-title">System Uptime</p>
+                        <p class="stat-value">99.98%</p>
+                    </div>
+                     <div class="stat-card">
+                        <p class="stat-title">Response Time</p>
+                        <p class="stat-value">245ms</p>
+                    </div>
+                     <div class="stat-card">
+                        <p class="stat-title">AI Accuracy</p>
+                        <p class="stat-value">96.8%</p>
+                    </div>
+                     <div class="stat-card">
+                        <p class="stat-title">Active Users</p>
+                        <p class="stat-value">1458</p>
+                    </div>
+                </section>
+
+                <section class="panels-row admin-panels-row"> <div class="dashboard-panel recent-users">
+                        <div class="panel-header">
+                            <h3>Recent Users</h3>
+                            <a href="#" class="view-all-link">View All</a>
+                        </div>
+                        <ul class="user-list">
+                            <li class="user-item">
+                                <div class="user-info">
+                                    <span class="user-name">Sarah Chen</span>
+                                    <span class="user-email">sarah&#64;techcorp.com</span>
+                                </div>
+                                <span class="status-badge active-badge">active</span>
+                            </li>
+                            <li class="user-item">
+                                <div class="user-info">
+                                    <span class="user-name">James Wilson</span>
+                                    <span class="user-email">james&#64;gmail.com</span>
+                                </div>
+                                <span class="status-badge active-badge">active</span>
+                            </li>
+                             <li class="user-item">
+                                <div class="user-info">
+                                    <span class="user-name">Elena Rodriguez</span>
+                                    <span class="user-email">elena&#64;aitech.com</span>
+                                </div>
+                                <span class="status-badge suspended-badge">suspended</span>
+                            </li>
+                            </ul>
+                    </div>
+                    </section>
+
+            </main>
+            <!-- Chatbot Section -->
+            <div class="chatbot-container">
+                <div class="chatbot-header">
+                    <h3>Chat with KAZI-AI</h3>
+                    <button class="chatbot-toggle-btn">-</button>
+                </div>
+                <div class="chatbot-body">
+                    <div class="chatbot-messages">
+                        <!-- Chat messages will appear here -->
+                    </div>
+                    <div class="chatbot-input">
+                        <input type="text" placeholder="Type your message..." />
+                        <button class="send-btn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

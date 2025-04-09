@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #d88181;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  
+  .login-box {
+    background-color: #111;
+    color: white;
+    border-radius: 16px;
+    padding: 2rem;
+    width: 320px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  }
+  
+  .login-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 1.5rem;
+  }
+  
+  form label {
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+    color: #ccc;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #222;
+    color: white;
+    font-size: 0.9rem;
+  }
+  
+  .sign-in-btn {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 20px;
+    background-color: #6c2cff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .sign-in-btn:hover {
+    background-color: #5b23d0;
+  }
+  
+  .divider {
+    text-align: center;
+    margin: 1.5rem 0 1rem;
+    font-size: 0.8rem;
+    color: #888;
+  }
+  
+  .social-login {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .social-login button {
+    background-color: #1a1a1a;
+    border: none;
+    padding: 0.6rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .social-login img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .bottom-text {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: #aaa;
+    text-align: center;
+  }
+  
+  .bottom-text a {
+    color: #a259ff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  

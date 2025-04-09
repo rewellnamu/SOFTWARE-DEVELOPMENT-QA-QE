@@ -1,0 +1,211 @@
+/* Basic Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #e8c3c3; /* Approximate pink background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff; /* Default text color inside form */
+    padding: 20px; /* Add some padding for smaller screens */
+}
+
+.form-container {
+    background-color: #2d2d2d; /* Dark background for the form */
+    padding: 35px 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 420px; /* Max width of the form */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 1.6em;
+}
+
+.subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #b0b0b0; /* Lighter grey for subtitle */
+    font-size: 0.95em;
+}
+
+.input-group {
+    margin-bottom: 18px;
+    position: relative; /* Needed for potential absolute elements like password toggle */
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.85em;
+    color: #c0c0c0; /* Light grey for labels */
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #3f3f3f; /* Slightly lighter background for inputs */
+    border: 1px solid #555; /* Subtle border */
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1em;
+}
+
+input::placeholder {
+    color: #888; /* Placeholder text color */
+}
+
+input:focus {
+    outline: none;
+    border-color: #777; /* Slightly lighter border on focus */
+    /* Optional: Add a subtle glow */
+    /* box-shadow: 0 0 0 2px rgba(100, 100, 100, 0.3); */
+}
+
+.name-fields {
+    display: flex;
+    gap: 15px; /* Space between first and last name inputs */
+    margin-bottom: 18px;
+}
+
+.name-fields .input-group {
+    flex: 1; /* Make input groups take equal space */
+    margin-bottom: 0; /* Remove bottom margin as parent div handles it */
+}
+
+/* Style for potential password toggle icon */
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 55%; /* Adjust vertical position relative to label */
+    transform: translateY(-50%);
+    color: #aaa;
+    cursor: pointer;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    margin-top: 5px; /* Small space above checkbox */
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto; /* Override default width */
+    accent-color: #8a2be2; /* Try to color the checkmark */
+    transform: scale(1.1); /* Slightly larger checkbox */
+}
+
+.checkbox-group label {
+    margin-bottom: 0; /* Reset margin for checkbox label */
+    font-size: 0.8em;
+    color: #ccc;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #6a1b9a; /* Purple button color */
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 10px; /* Space above button */
+}
+
+.submit-button:hover {
+    background-color: #5a148a; /* Darker purple on hover */
+}
+
+.social-separator {
+    text-align: center;
+    margin: 25px 0 15px 0;
+    color: #aaa;
+    font-size: 0.9em;
+}
+
+.social-signup {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.social-button {
+    display: inline-flex; /* Use flexbox for centering icon/text */
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #555;
+    border: none;
+    border-radius: 6px; /* Rounded square shape */
+    color: #fff;
+    font-size: 1.2em; /* Adjust if using Font Awesome icons */
+    font-weight: bold; /* For placeholder text */
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+
+.social-button:hover {
+    background-color: #666;
+}
+
+.signin-link {
+    text-align: center;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+.signin-link a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+.signin-link a:hover {
+    color: #eee;
+}
+
+/* Optional: Responsive Adjustments */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 25px 20px;
+    }
+
+    .name-fields {
+        flex-direction: column; /* Stack name fields on small screens */
+        gap: 0; /* Remove gap when stacked */
+    }
+     .name-fields .input-group {
+         margin-bottom: 18px; /* Add margin back when stacked */
+     }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    .submit-button {
+        padding: 12px;
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,73 @@
+   <div class="form-container">
+        <form action="#" method="post">
+            <h2>Create employer account</h2>
+            <p class="subtitle">Start hiring top talent today</p>
+
+            <div class="input-group">
+                <label for="company-name">Company name</label>
+                <input type="text" id="company-name" name="company_name" placeholder="Enter company name" required>
+            </div>
+
+            <div class="name-fields">
+                <div class="input-group">
+                    <label for="first-name">First name</label>
+                    <input type="text" id="first-name" name="first_name" placeholder="First name" required>
+                </div>
+                <div class="input-group">
+                    <label for="last-name">Last name</label>
+                    <input type="text" id="last-name" name="last_name" placeholder="Last name" required>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Work email</label>
+                <input type="email" id="email" name="email" placeholder="name@company.com" required>
+            </div>
+
+            <div class="input-group">
+                <label for="phone">Phone number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+            </div>
+
+            <div class="input-group">
+                <label for="industry">Industry</label>
+                <select id="industry" name="industry" required>
+                    <option value="" disabled selected hidden>Select industry</option>
+                    <option value="tech">Technology</option>
+                    <option value="finance">Finance</option>
+                    <option value="health">Healthcare</option>
+                    <option value="retail">Retail</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+             <div class="input-group">
+                <label for="company-size">Company size</label>
+                <select id="company-size" name="company_size" required>
+                    <option value="" disabled selected hidden>Select company size</option>
+                    <option value="1-10">1-10 employees</option>
+                    <option value="11-50">11-50 employees</option>
+                    <option value="51-200">51-200 employees</option>
+                    <option value="201-1000">201-1000 employees</option>
+                    <option value="1000+">1000+ employees</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a strong password" required>
+            </div>
+
+            <div class="checkbox-group terms-group"> <input type="checkbox" id="agree-terms" name="agree_terms" required>
+                <label for="agree-terms">
+                    I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                </label>
+            </div>
+
+            <button type="submit" class="submit-button">Create account</button>
+
+            <p class="signin-link"> Already have an account? <a href="#">Sign in</a>
+            </p>
+
+        </form>
+    </div>

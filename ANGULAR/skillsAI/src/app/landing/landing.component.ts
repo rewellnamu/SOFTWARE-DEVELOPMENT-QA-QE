@@ -10,7 +10,7 @@ import { SignupComponent } from '../pages/signup/signup.component';
 @Component({
   standalone: true,
   selector: 'app-landing',
-  imports: [ LoginComponent, AdminComponent, EmployerComponent, JobSeekerComponent, SignupComponent ],
+  imports: [],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.css',
 })
