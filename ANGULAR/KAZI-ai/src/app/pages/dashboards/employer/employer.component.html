@@ -1,0 +1,23 @@
+<!-- employer.component.html -->
+<section class="p-6">
+    <h2 class="text-2xl font-bold mb-4">Employer Dashboard</h2>
+  
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-xl shadow-md p-4">
+        <h3 class="font-semibold mb-2">Post a Job</h3>
+        <form>
+          <input class="w-full mb-2 p-2 border rounded" placeholder="Job Title" />
+          <textarea class="w-full p-2 border rounded" placeholder="Description"></textarea>
+          <button class="mt-2 bg-black text-white px-4 py-2 rounded">Post</button>
+        </form>
+      </div>
+  
+      <div class="bg-white rounded-xl shadow-md p-4">
+        <h3 class="font-semibold mb-2">AI-Matched Candidates</h3>
+        <ul>
+          <li *ngFor="let candidate of candidates">{{ candidate.name }} - {{ candidate.skills.join(', ') }}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  

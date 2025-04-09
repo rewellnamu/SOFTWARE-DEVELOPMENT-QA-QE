@@ -1,0 +1,23 @@
+<!-- admin.component.html -->
+<section class="p-6">
+    <h2 class="text-2xl font-bold mb-4">Admin Panel</h2>
+  
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="bg-white rounded-xl shadow-md p-4">
+        <h3 class="font-semibold">Users</h3>
+        <p>{{ totalUsers }} total users</p>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-4">
+        <h3 class="font-semibold">Security Logs</h3>
+        <ul>
+          <li *ngFor="let log of ['logs']"></li>
+            <!-- {{ log.message }}</li> -->
+        </ul>
+      </div>
+      <div class="bg-white rounded-xl shadow-md p-4">
+        <h3 class="font-semibold">AI Accuracy</h3>
+        <ngx-charts-pie-chart [results]="aiAccuracyData"></ngx-charts-pie-chart>
+      </div>
+    </div>
+  </section>
+  
