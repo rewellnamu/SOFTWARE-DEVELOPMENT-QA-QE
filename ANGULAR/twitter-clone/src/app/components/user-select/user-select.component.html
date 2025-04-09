@@ -1,7 +1,0 @@
-<p>user-select works!</p>
-<label for="user-select">Select User:</label>
-<select id="user-select" [(ngModel)]="selectedUserId" (change)="onUserChange()">
-  <option *ngFor="let user of users" [value]="user.id">
-    {{ user.username }}
-  </option>
-</select>
