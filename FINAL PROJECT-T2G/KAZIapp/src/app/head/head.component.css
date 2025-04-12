@@ -1,0 +1,55 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 100px;
+}
+
+.navbar-brand {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #007bff;
+    font-family: monospace;
+}
+
+.navbar-brand .ai {
+    color: #ff4081;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: #160505;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+.login-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+img{
+    height: 100px;
+    margin-left: 20px;
+}

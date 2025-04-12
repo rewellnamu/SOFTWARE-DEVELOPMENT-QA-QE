@@ -1,0 +1,150 @@
+.about-container {
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  font-family: 'Inter', sans-serif;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.team-photo {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.6rem;
+  background-color: #facc15;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background-color: #eab308;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.decorative-divider {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, rgba(250, 204, 21, 0), #facc15, rgba(250, 204, 21, 0));
+  color: #1a202c;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    font-size: 2.5rem;
+    padding: 1.5rem;
+  }
+
+  .team-photo {
+    max-width: 100%;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+
+
+
+
+
+
+
+}
+
+.cta-button {
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  margin-bottom: 1rem;
+}
+}
+
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4a5568;
+  text-align: justify;
+}
+
+.about-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.about-container ul li {
+  font-size: 1.1rem;
+  color: #2d3748;
+  background: rgba(250, 204, 21, 0.1);
+  padding: 0.8rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-container ul li:hover {
+  background-color: rgba(250, 204, 21, 0.2);
+  transform: translateX(5px);
+}
+
+.cta-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1.5rem;
+  }
+
+  .team-photo {
+    max-width: 100%;
+  }
+
+  .cta-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-container h1 {
+    font-size: 2rem;
+  }
+
+  .about-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-container p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}

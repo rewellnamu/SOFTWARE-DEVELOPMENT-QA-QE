@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './jobseekerprofile.component.css'
 })
 export class JobseekerprofileComponent {
+navigateToAIboard() {
+throw new Error('Method not implemented.');
+}
 
 }

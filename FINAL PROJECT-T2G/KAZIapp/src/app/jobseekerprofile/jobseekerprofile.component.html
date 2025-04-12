@@ -1,94 +1,123 @@
 <div class="dashboard-layout">
-        <header class="page-header">
-            <div class="logo">KAZI-AI</div>
-            <nav class="header-nav">
-                <button type="button" class="header-button chat-btn" onclick="toggleChatBot()">Bot Chat</button>
-                <button type="button" class="header-button update-cv-btn">Update CV</button>
-            </nav>
-        </header>
+  <header class="page-header">
+    <div class="logo">KAZI-AI</div>
+    <nav class="header-nav">
+      <button
+        type="button"
+        class="header-button chat-btn"
+        onclick="toggleChatBot()"
+      >
+        Bot Chat
+      </button>
+      <button type="button" class="header-button update-cv-btn">
+        Update CV
+      </button>
+    </nav>
+  </header>
 
-        <div class="dashboard-body">
-            <aside class="dashboard-sidebar">
-                <nav class="sidebar-nav">
-                    <ul>
-                        <li class="active"> <a href="#">
-                                <i class="fas fa-user fa-fw"></i> <span class="link-text">Profile</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-cogs fa-fw"></i> <span class="link-text">Skills</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-briefcase fa-fw"></i> <span class="link-text">Portfolio</span>
-                            </a>
-                        </li>
-                        <li>
-                             <a href="#">
-                                <i class="fas fa-search fa-fw"></i> <span class="link-text">Find Jobs</span>
-                            </a>
-                        </li>
-                         <li>
-                             <a href="#">
-                                <i class="fas fa-chart-line fa-fw"></i> <span class="link-text">Career Path</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </aside>
+  <div class="dashboard-body">
+    <aside class="dashboard-sidebar">
+      <nav class="sidebar-nav">
+        <ul>
+          <li class="active">
+            <a href="#">
+              <i class="fas fa-user fa-fw"></i>
+              <span class="link-text">Profile</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fas fa-cogs fa-fw"></i>
+              <span class="link-text">Skills</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fas fa-briefcase fa-fw"></i>
+              <span class="link-text">Portfolio</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fas fa-search fa-fw"></i>
+              <span class="link-text">Find Jobs</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fas fa-chart-line fa-fw"></i>
+              <span class="link-text">Career Path</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
 
-            <main class="dashboard-content">
-                <section class="profile-card">
-                    <div class="profile-header">
-                        <img src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-picture"> <div class="profile-info">
-                            <h2>Rewell Developer</h2>
-                            <p class="profile-title">Senior Machine Learning Engineer</p>
-                            <button class="edit-profile-btn">Edit Profile</button>
-                        </div>
-                    </div>
-
-                    <div class="profile-section about-section">
-                        <h3>About</h3>
-                        <p>
-                            Experienced ML engineer with a passion for building AI-powered solutions. Specialized
-                            in computer vision and natural language processing.
-                        </p>
-                    </div>
-
-                    <div class="profile-section contact-section">
-                        <h3>Contact</h3>
-                        <p>john&#64;example.com</p>
-                        <p>San Francisco, CA (Open to Remote)</p>
-                    </div>
-                </section>
-
-                <div id="chatbot-container" class="chatbot-container" style="display: none;">
-                    <div class="chatbot-header">
-                        <h3>Chat with KAZI-AI</h3>
-                        <button class="close-chatbot-btn" onclick="toggleChatBot()">X</button>
-                    </div>
-                    <div class="chatbot-body">
-                        <p>Welcome! How can I assist you today?</p>
-                        <!-- Chatbot messages will go here -->
-                    </div>
-                    <div class="chatbot-footer">
-                        <input type="text" placeholder="Type your message..." class="chatbot-input">
-                        <button class="send-chatbot-btn">Send</button>
-                    </div>
-                </div>
-
-                <div class="logout-area">
-                    <button class="logout-button">LOG OUT</button>
-                </div>
-            </main>
+    <main class="dashboard-content">
+      <section class="profile-card">
+        <div class="profile-header">
+          <img
+            src="1645409540494.jpeg"
+            alt="Profile Picture"
+            class="profile-picture"
+          />
+          <div class="profile-info">
+            <h2>Rewell Developer</h2>
+            <p class="profile-title">Software Developer/Engineer</p>
+            <button class="edit-profile-btn">Edit Profile</button>
+          </div>
         </div>
-    </div>
+
+        <div class="profile-section about-section">
+          <h3>About</h3>
+          <p>
+            I am a software developer/engineer with a passion for building
+            efficient and scalable software solutions. I enjoy tackling complex
+            problems and turning ideas into functional applications through
+            code.
+          </p>
+        </div>
+
+        <div class="profile-section contact-section">
+          <h3>Contact</h3>
+          <p>Riwenamu&#64;gmail.com</p>
+          <p>Kenya, Nyeri (Open to Remote)</p>
+        </div>
+      </section>
+
+      <div
+        id="chatbot-container"
+        class="chatbot-container"
+        style="display: none"
+      >
+        <div class="chatbot-header">
+          <h3>Chat with KAZI-AI</h3>
+          <button class="close-chatbot-btn" onclick="toggleChatBot()">X</button>
+        </div>
+        <div class="chatbot-body">
+          <p>Welcome! How can I assist you today?</p>
+          <!-- Chatbot messages will go here -->
+        </div>
+        <div class="chatbot-footer">
+          <input
+            type="text"
+            placeholder="Type your message..."
+            class="chatbot-input"
+          />
+          <button class="send-chatbot-btn">Send</button>
+        </div>
+      </div>
+
+      <div class="logout-area">
+        <button class="logout-button">LOG OUT</button>
+      </div>
+    </main>
+  </div>
+</div>
 
 <script>
-    function toggleChatBot() {
-        const chatbot = document.getElementById('chatbot-container');
-        chatbot.style.display = chatbot.style.display === 'none' ? 'block' : 'none';
-    }
+  function toggleChatBot() {
+    const chatbot = document.getElementById("chatbot-container");
+    chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
+  }
 </script>
