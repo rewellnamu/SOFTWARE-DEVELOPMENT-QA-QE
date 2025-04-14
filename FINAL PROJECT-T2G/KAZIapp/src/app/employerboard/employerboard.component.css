@@ -187,14 +187,3 @@ body:not(.page-background):not(.admin-page-background):not(.dashboard-body-bg) {
     .dashboard-content { padding: 20px; }
     .dashboard-panel { padding: 20px 25px;}
 }
-
-/* --- Include previous form styles below if needed in the same file --- */
-/* --- Form Container Styles --- */
-/* .form-container { ... } */
-/* --- Input/Label/Button/Checkbox etc. styles --- */
-/* label { ... } */
-/* input[type="text"], etc. { ... } */
-/* select { ... } */
-/* .submit-button { ... } */
-/* .checkbox-group { ... } */
-/* ... etc ... */
