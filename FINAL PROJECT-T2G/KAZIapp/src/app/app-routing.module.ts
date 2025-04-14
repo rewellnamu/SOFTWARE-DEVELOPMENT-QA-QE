@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'job-seekersignup', component: JobSeekersignupComponent },
   { path: 'adminsignup', component: AdminsignupComponent },
   { path: 'employersignup', component: EmployersignupComponent },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'jobseekerprofile', component: JobseekerProfileComponent },
   { path: 'employerlogin', component: EmployerloginComponent },
   { path: 'aiboard', component: AIboardComponent },
