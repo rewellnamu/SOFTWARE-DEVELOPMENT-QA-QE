@@ -7,7 +7,7 @@ import { EmployerboardComponent } from './employerboard/employerboard.component'
 import { EmployerloginComponent } from './employerlogin/employerlogin.component';
 import { EmployersignupComponent } from './employersignup/employersignup.component';
 import { JobseekerboardComponent } from './jobseekerboard/jobseekerboard.component';
-import { JobseekerprofileComponent } from './jobseekerprofile/jobseekerprofile.component';
+import { JobseekerProfileComponent } from './jobseekerprofile/jobseekerprofile.component';
 import { AIboardComponent } from './aiboard/aiboard.component';
 import { AdminboardComponent } from './adminboard/adminboard.component';
 import { JobSeekerloginComponent } from './job-seekerlogin/job-seekerlogin.component';
@@ -24,7 +24,7 @@ export const routes: Routes = [
   { path: 'employerlogin', component: EmployerloginComponent },
   { path: 'employersignup', component: EmployersignupComponent },
   { path: 'jobseekerboard', component: JobseekerboardComponent },
-  { path: 'jobseekerprofile', component: JobseekerprofileComponent },
+  { path: 'jobseekerprofile', component: JobseekerProfileComponent },
   { path: 'aiboard', component: AIboardComponent },
   { path: 'adminboard', component: AdminboardComponent },
   { path: 'job-seekerlogin', component: JobSeekerloginComponent },

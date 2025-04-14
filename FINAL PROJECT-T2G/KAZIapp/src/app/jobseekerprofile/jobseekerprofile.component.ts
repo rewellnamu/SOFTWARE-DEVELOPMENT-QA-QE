@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-jobseekerprofile',
-  imports: [],
   templateUrl: './jobseekerprofile.component.html',
-  styleUrl: './jobseekerprofile.component.css'
+  styleUrls: ['./jobseekerprofile.component.css'],
 })
-export class JobseekerprofileComponent {
-navigateToAIboard() {
-throw new Error('Method not implemented.');
-}
+export class JobseekerProfileComponent {
+  constructor(private router: Router) {}
 
+  navigateToJobseekerBoard() {
+    this.router.navigate(['/jobseekerboard']);
+  }
+
+  logout(): void {
+    this.router.navigate(['/job-seekerlogin']);
+  }
 }

@@ -1,4 +1,4 @@
-/* Basic Reset */
+Basic Reset
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,6 +17,7 @@ body {
 }
 
 .form-container {
+    margin-left: 400px;
     background-color: #2d2d2d; /* Dark background for the form */
     padding: 35px 40px;
     border-radius: 12px;

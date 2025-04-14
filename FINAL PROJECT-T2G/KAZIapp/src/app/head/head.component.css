@@ -27,8 +27,13 @@
 
 .nav-link {
     color: #160505;
-    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
     transition: color 0.3s ease;
+    border-radius: 5px;
+    height: 30px;
+    width: 100px;
+
 
 }
 
@@ -43,13 +48,24 @@
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
 }
 
 .login-btn:hover {
     background-color: #0056b3;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
 }
+
+.login-btn:active {
+    background-color: #004494;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+}
+
 img{
     height: 100px;
-    margin-left: 20px;
+    margin-left: 55px;
 }

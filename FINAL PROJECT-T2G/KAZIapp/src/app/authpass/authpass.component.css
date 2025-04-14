@@ -1,10 +1,4 @@
-* {
-    
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
+body {
     font-family: 'Poppins', sans-serif;
     background-color: #ff3d3d;
     color: white;
@@ -23,13 +17,15 @@
   }
   
   .logo .ai {
-    color: #7e00ff;
+    color: #06010a;
   }
   
   .welcome-text {
     font-size: 0.9rem;
-    color: #f7baba;
+    color: #0e0d0d;
     margin: 0.5rem 0 2rem;
+    font-family: cursive;
+    font-weight: bold;
   }
   
   .login-card {
@@ -58,13 +54,18 @@
     border-bottom: 2px solid transparent;
   }
   
+  .tabs button:hover {
+    color: white;
+    background-color: #333;
+  }
+  
   .tabs .active {
     color: white;
     border-color: white;
   }
   
   .role-section label {
-    color: #aaa;
+    color: #0f0f0f;
     font-size: 0.9rem;
   }
   
@@ -86,14 +87,27 @@
     cursor: pointer;
     font-size: 0.8rem;
     transition: 0.3s ease;
+    font-size: larger;
+  }
+  
+  .role:hover {
+    background-color: #333;
+    color: #7a1eff;
+    border-color: #7a1eff;
   }
   
   .role.selected {
     background-color: #7a1eff;
     color: white;
     border: 1px solid #7a1eff;
+    height: 150px;
+    width: 50px;
   }
-  
+  .role.selected:hover {
+    background-color: #121213;
+    color: white;
+    border-color: #5d1eff;
+  }
   .continue-btn {
     width: 100%;
     background-color: #5d1eff;
@@ -109,6 +123,7 @@
   
   .continue-btn:hover {
     background-color: #4d1acc;
+    transform: scale(1.05);
   }
   
   .bottom-text {
@@ -132,4 +147,3 @@
     color: #cc66ff;
     text-decoration: none;
   }
-  

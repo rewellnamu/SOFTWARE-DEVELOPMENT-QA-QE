@@ -1,258 +1,294 @@
-<body class="page-background"> <header class="page-header">
-        <div class="logo">KAZI-AI</div>
-        <nav class="header-nav">
-            <button type="button" class="header-button profile-btn">Profile</button>
-            <button type="button" class="header-button post-resume-btn">Post Resume</button>
-        </nav>
-    </header>
+<body class="page-background">
+  <header class="page-header">
+    <!-- Update Back to Profile button -->
+    <button class="back-to-profile-btn" (click)="navigateToProfile()">
+      ⬅ Back to Profile
+    </button>
+    <div class="logo">KAZI-AI</div>
+    <nav class="header-nav">
+      <button type="button" class="header-button profile-btn">Profile</button>
+      <button type="button" class="header-button post-resume-btn">
+        Post Resume
+      </button>
+    </nav>
+  </header>
 
-    <main class="job-search-container">
-        <h1>Find Your Dream Job</h1>
-        <p class="page-subtitle">Search thousands of jobs in the tech industry</p>
+  <main class="job-search-container">
+    <h1>Find Your Dream Job</h1>
+    <p class="page-subtitle">Search thousands of jobs in the tech industry</p>
 
-        <div class="columns-wrapper">
-            <aside class="filters-sidebar">
-                <h3>Filters</h3>
-                <div class="filter-group">
-                    <label for="job-type">Job Type</label>
-                    <select id="job-type" name="job_type">
-                        <option value="all" selected>All Types</option>
-                        <option value="full-time">Full-time</option>
-                        <option value="part-time">Part-time</option>
-                        <option value="contract">Contract</option>
-                        <option value="internship">Internship</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="experience">Experience</label>
-                    <select id="experience" name="experience">
-                        <option value="all" selected>All Levels</option>
-                        <option value="entry">Entry Level</option>
-                        <option value="mid">Mid Level</option>
-                        <option value="senior">Senior Level</option>
-                        <option value="manager">Manager</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="location">Location</label>
-                    <select id="location" name="location">
-                        <option value="all" selected>All Locations</option>
-                        <option value="remote">Remote</option>
-                        <option value="ny">New York</option>
-                        <option value="sf">San Francisco</option>
-                        <option value="london">London</option>
-                    </select>
-                </div>
-            </aside>
-
-            <section class="job-listings">
-                <div class="search-bar">
-                    <input type="search" placeholder="Search jobs by title or company">
-                </div>
-
-                <div class="job-cards-container">
-                    <article class="job-card">
-                        <div class="job-card-header">
-                            <div>
-                                <h4 class="job-title">Senior AI Engineer</h4>
-                                <p class="company-name">TechCorp</p>
-                            </div>
-                            <span class="date-posted">2d ago</span>
-                        </div>
-                        <div class="job-tags">
-                            <span class="tag tag-type">Full-time</span>
-                            <span class="tag tag-location">Remote</span>
-                            <span class="tag tag-salary">$120k - $150k</span>
-                        </div>
-                        <p class="job-description">
-                            Leading AI development projects and implementing machine learning solutions.
-                        </p>
-                    </article>
-
-                    <article class="job-card">
-                        <div class="job-card-header">
-                            <div>
-                                <h4 class="job-title">Data Scientist</h4>
-                                <p class="company-name">DataFlow Inc</p>
-                            </div>
-                            <span class="date-posted">1d ago</span>
-                        </div>
-                        <div class="job-tags">
-                            <span class="tag tag-type">Full-time</span>
-                            <span class="tag tag-location">New York</span>
-                            <span class="tag tag-salary">$90k - $120k</span>
-                        </div>
-                        <p class="job-description">
-                            Analyzing complex data sets and building predictive models.
-                        </p>
-                    </article>
-
-                     <article class="job-card">
-                        <div class="job-card-header">
-                            <div>
-                                <h4 class="job-title">ML Engineer</h4>
-                                <p class="company-name">AI Solutions</p>
-                            </div>
-                            <span class="date-posted">5d ago</span>
-                        </div>
-                        <div class="job-tags">
-                            <span class="tag tag-type contract-tag">Contract</span> <span class="tag tag-location">San Francisco</span>
-                            <span class="tag tag-salary">$100k - $130k</span>
-                        </div>
-                        <p class="job-description">
-                            Developing and deploying machine learning models.
-                        </p>
-                    </article>
-                     </div>
-            </section>
+    <div class="columns-wrapper">
+      <aside class="filters-sidebar">
+        <h3>Filters</h3>
+        <div class="filter-group">
+          <label for="job-type">Job Type</label>
+          <select id="job-type" name="job_type">
+            <option value="all" selected>All Types</option>
+            <option value="full-time">Full-time</option>
+            <option value="part-time">Part-time</option>
+            <option value="contract">Contract</option>
+            <option value="internship">Internship</option>
+          </select>
         </div>
-    </main>
-
-    <!-- Chatbot Widget -->
-    <div class="chatbot-container">
-        <button class="chatbot-toggle" onclick="toggleChatbot()">💬 Chat with us</button>
-        <div class="chatbot-widget" id="chatbotWidget">
-            <div class="chatbot-header">
-                <h4>Chatbot</h4>
-                <button class="close-chatbot" onclick="toggleChatbot()">✖</button>
-            </div>
-            <div class="chatbot-messages" id="chatbotMessages">
-                <!-- Chat messages will appear here -->
-            </div>
-            <div class="chatbot-input">
-                <input type="text" id="chatbotInput" placeholder="Type your message..." onkeypress="handleChatInput(event)">
-                <button onclick="sendMessage()">Send</button>
-            </div>
+        <div class="filter-group">
+          <label for="experience">Experience</label>
+          <select id="experience" name="experience">
+            <option value="all" selected>All Levels</option>
+            <option value="entry">Entry Level</option>
+            <option value="mid">Mid Level</option>
+            <option value="senior">Senior Level</option>
+            <option value="manager">Manager</option>
+          </select>
         </div>
+        <div class="filter-group">
+          <label for="location">Location</label>
+          <select id="location" name="location">
+            <option value="all" selected>All Locations</option>
+            <option value="remote">Remote</option>
+            <option value="ny">New York</option>
+            <option value="sf">San Francisco</option>
+            <option value="london">London</option>
+          </select>
+        </div>
+      </aside>
+
+      <section class="job-listings">
+        <div class="search-bar">
+          <input type="search" placeholder="Search jobs by title or company" />
+        </div>
+
+        <div class="job-cards-container">
+          <article class="job-card">
+            <div class="job-card-header">
+              <div>
+                <h4 class="job-title">Senior AI Engineer</h4>
+                <p class="company-name">TechCorp</p>
+              </div>
+              <span class="date-posted">2d ago</span>
+            </div>
+            <div class="job-tags">
+              <span class="tag tag-type">Full-time</span>
+              <span class="tag tag-location">Remote</span>
+              <span class="tag tag-salary">$120k - $150k</span>
+            </div>
+            <p class="job-description">
+              Leading AI development projects and implementing machine learning
+              solutions.
+            </p>
+          </article>
+
+          <article class="job-card">
+            <div class="job-card-header">
+              <div>
+                <h4 class="job-title">Data Scientist</h4>
+                <p class="company-name">DataFlow Inc</p>
+              </div>
+              <span class="date-posted">1d ago</span>
+            </div>
+            <div class="job-tags">
+              <span class="tag tag-type">Full-time</span>
+              <span class="tag tag-location">New York</span>
+              <span class="tag tag-salary">$90k - $120k</span>
+            </div>
+            <p class="job-description">
+              Analyzing complex data sets and building predictive models.
+            </p>
+          </article>
+
+          <article class="job-card">
+            <div class="job-card-header">
+              <div>
+                <h4 class="job-title">ML Engineer</h4>
+                <p class="company-name">AI Solutions</p>
+              </div>
+              <span class="date-posted">5d ago</span>
+            </div>
+            <div class="job-tags">
+              <span class="tag tag-type contract-tag">Contract</span>
+              <span class="tag tag-location">San Francisco</span>
+              <span class="tag tag-salary">$100k - $130k</span>
+            </div>
+            <p class="job-description">
+              Developing and deploying machine learning models.
+            </p>
+          </article>
+        </div>
+      </section>
     </div>
+  </main>
 
-    <script>
-        const chatbotWidget = document.getElementById('chatbotWidget');
-        const chatbotMessages = document.getElementById('chatbotMessages');
-        const chatbotInput = document.getElementById('chatbotInput');
+  <!-- Chatbot Widget -->
+  <div class="chatbot-container">
+    <button class="chatbot-toggle" onclick="toggleChatbot()">
+      💬 Chat with us
+    </button>
+    <div class="chatbot-widget" id="chatbotWidget">
+      <div class="chatbot-header">
+        <h4>Chatbot</h4>
+        <button class="close-chatbot" onclick="toggleChatbot()">✖</button>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages">
+        <!-- Chat messages will appear here -->
+      </div>
+      <div class="chatbot-input">
+        <input
+          type="text"
+          id="chatbotInput"
+          placeholder="Type your message..."
+          onkeypress="handleChatInput(event)"
+        />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
 
-        function toggleChatbot() {
-            chatbotWidget.classList.toggle('active');
-        }
+  <script>
+    const chatbotWidget = document.getElementById("chatbotWidget");
+    const chatbotMessages = document.getElementById("chatbotMessages");
+    const chatbotInput = document.getElementById("chatbotInput");
 
-        function handleChatInput(event) {
-            if (event.key === 'Enter') {
-                sendMessage();
-            }
-        }
+    function toggleChatbot() {
+      chatbotWidget.classList.toggle("active");
+    }
 
-        function sendMessage() {
-            const userMessage = chatbotInput.value.trim();
-            if (!userMessage) return;
+    function handleChatInput(event) {
+      if (event.key === "Enter") {
+        sendMessage();
+      }
+    }
 
-            // Display user message
-            const userMessageElement = document.createElement('div');
-            userMessageElement.className = 'chatbot-message user-message';
-            userMessageElement.textContent = userMessage;
-            chatbotMessages.appendChild(userMessageElement);
+    function sendMessage() {
+      const userMessage = chatbotInput.value.trim();
+      if (!userMessage) return;
 
-            chatbotInput.value = '';
+      // Display user message
+      const userMessageElement = document.createElement("div");
+      userMessageElement.className = "chatbot-message user-message";
+      userMessageElement.textContent = userMessage;
+      chatbotMessages.appendChild(userMessageElement);
 
-            // Simulate bot response
-            setTimeout(() => {
-                const botMessageElement = document.createElement('div');
-                botMessageElement.className = 'chatbot-message bot-message';
-                botMessageElement.textContent = `You said: "${userMessage}". How can I assist you further?`;
-                chatbotMessages.appendChild(botMessageElement);
+      chatbotInput.value = "";
 
-                chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-            }, 1000);
-        }
-    </script>
+      // Simulate bot response
+      setTimeout(() => {
+        const botMessageElement = document.createElement("div");
+        botMessageElement.className = "chatbot-message bot-message";
+        botMessageElement.textContent = `You said: "${userMessage}". How can I assist you further?`;
+        chatbotMessages.appendChild(botMessageElement);
 
-    <style>
-        .chatbot-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }, 1000);
+    }
 
-        .chatbot-toggle {
-            background-color: #2575fc;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 16px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    function navigateToProfile() {
+      window.location.href = "/jobseekerprofile"; // Adjust the path as needed
+    }
+  </script>
 
-        .chatbot-widget {
-            display: none;
-            flex-direction: column;
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            width: 300px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
+  <style>
+    .chatbot-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
 
-        .chatbot-widget.active {
-            display: flex;
-        }
+    .chatbot-toggle {
+      background-color: #2575fc;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-        .chatbot-header {
-            background: #2575fc;
-            color: white;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .chatbot-widget {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 300px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
 
-        .chatbot-messages {
-            flex: 1;
-            padding: 10px;
-            overflow-y: auto;
-            max-height: 300px;
-        }
+    .chatbot-widget.active {
+      display: flex;
+    }
 
-        .chatbot-message {
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
+    .chatbot-header {
+      background: #2575fc;
+      color: white;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .user-message {
-            background: #2575fc;
-            color: white;
-            align-self: flex-end;
-        }
+    .chatbot-messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      max-height: 300px;
+    }
 
-        .bot-message {
-            background: #f1f1f1;
-            color: #333;
-            align-self: flex-start;
-        }
+    .chatbot-message {
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+    }
 
-        .chatbot-input {
-            display: flex;
-            border-top: 1px solid #ddd;
-        }
+    .user-message {
+      background: #2575fc;
+      color: white;
+      align-self: flex-end;
+    }
 
-        .chatbot-input input {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            outline: none;
-        }
+    .bot-message {
+      background: #f1f1f1;
+      color: #333;
+      align-self: flex-start;
+    }
 
-        .chatbot-input button {
-            background: #2575fc;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-    </style>
+    .chatbot-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    .chatbot-input input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      outline: none;
+    }
+
+    .chatbot-input button {
+      background: #2575fc;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    /* Style for Back to Profile button */
+    .back-to-profile-btn {
+      background-color: #f1f1f1;
+      color: #333;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-right: 20px;
+    }
+
+    .back-to-profile-btn:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
 </body>

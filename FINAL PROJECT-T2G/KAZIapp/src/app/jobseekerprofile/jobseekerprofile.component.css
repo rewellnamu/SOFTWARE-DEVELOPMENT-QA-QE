@@ -256,3 +256,43 @@ body:not(.page-background):not(.admin-page-background):not(.dashboard-body-bg) {
     .header-button { padding: 6px 10px; font-size: 0.8em; }
     .profile-card { padding: 15px 20px; }
 }
+.skills-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .skills-section h3 {
+    font-size: 20px;
+    color: #2575fc;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .skill-item {
+    background-color: #2575fc;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+
+  .skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }

@@ -9,9 +9,6 @@
       >
         Bot Chat
       </button>
-      <button type="button" class="header-button update-cv-btn">
-        Update CV
-      </button>
     </nav>
   </header>
 
@@ -25,26 +22,15 @@
               <span class="link-text">Profile</span>
             </a>
           </li>
+
           <li>
-            <a href="">
-              <i class="fas fa-cogs fa-fw"></i>
-              <span class="link-text">Skills</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i class="fas fa-briefcase fa-fw"></i>
-              <span class="link-text">Portfolio</span>
-            </a>
-          </li>
-          <li>
-            <a href="">
+            <a href="javascript:void(0)" (click)="navigateToJobseekerBoard()">
               <i class="fas fa-search fa-fw"></i>
               <span class="link-text">Find Jobs</span>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="javascript:void(0)" (click)="navigateToJobseekerBoard()">
               <i class="fas fa-chart-line fa-fw"></i>
               <span class="link-text">Career Path</span>
             </a>
@@ -78,6 +64,18 @@
           </p>
         </div>
 
+        <div class="profile-section skills-section">
+          <h3>Professional Skills</h3>
+          <ul class="skills-list">
+            <li class="skill-item">JavaScript</li>
+            <li class="skill-item">Python</li>
+            <li class="skill-item">Machine Learning</li>
+            <li class="skill-item">Data Analysis</li>
+            <li class="skill-item">Web Development</li>
+            <li class="skill-item">Cloud Computing</li>
+          </ul>
+        </div>
+
         <div class="profile-section contact-section">
           <h3>Contact</h3>
           <p>Riwenamu&#64;gmail.com</p>
@@ -109,7 +107,7 @@
       </div>
 
       <div class="logout-area">
-        <button class="logout-button">LOG OUT</button>
+        <button class="logout-button" (click)="logout()">LOG OUT</button>
       </div>
     </main>
   </div>

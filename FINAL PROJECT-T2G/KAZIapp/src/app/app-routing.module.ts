@@ -7,7 +7,7 @@ import { AboutComponent } from './about/about.component';
 import { JobSeekersignupComponent } from './job-seekersignup/job-seekersignup.component';
 import { AdminsignupComponent } from './adminsignup/adminsignup.component';
 import { EmployersignupComponent } from './employersignup/employersignup.component';
-import { JobseekerprofileComponent } from './jobseekerprofile/jobseekerprofile.component';
+import { JobseekerProfileComponent } from './jobseekerprofile/jobseekerprofile.component';
 import { EmployerloginComponent } from './employerlogin/employerlogin.component';
 import { AIboardComponent } from './aiboard/aiboard.component';
 import { JobseekerboardComponent } from './jobseekerboard/jobseekerboard.component';
@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'adminsignup', component: AdminsignupComponent },
   { path: 'employersignup', component: EmployersignupComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'jobseekerprofile', component: JobseekerprofileComponent },
+  { path: 'jobseekerprofile', component: JobseekerProfileComponent },
   { path: 'employerlogin', component: EmployerloginComponent },
   { path: 'aiboard', component: AIboardComponent },
   { path: 'jobseekerboard', component: JobseekerboardComponent },

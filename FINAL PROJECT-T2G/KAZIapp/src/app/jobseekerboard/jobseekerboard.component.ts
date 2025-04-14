@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-jobseekerboard',
-  imports: [],
   templateUrl: './jobseekerboard.component.html',
-  styleUrl: './jobseekerboard.component.css'
+  styleUrl: './jobseekerboard.component.css',
 })
 export class JobseekerboardComponent {
+  constructor(private router: Router) {}
 
+  navigateToProfile(): void {
+    this.router.navigate(['/jobseekerprofile']);
+  }
 }

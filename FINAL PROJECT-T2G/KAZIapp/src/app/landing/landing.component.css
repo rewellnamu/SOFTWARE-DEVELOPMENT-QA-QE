@@ -22,8 +22,9 @@ header {
 }
 .logo {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-left: 450px;
+    ;
 }
 
 .brand {
@@ -92,7 +93,7 @@ nav button:hover {
     font-size: 1rem;
     max-width: 600px;
     margin: 0 auto 1.5rem;
-    color: #666;
+    color: #0f0f0f;
 }
 
 .cta-buttons {
@@ -147,7 +148,7 @@ nav button:hover {
 }
 
 .image-container img {
-    width: 250px;
+    width: 300px;
     height: auto;
 }
 
@@ -159,7 +160,7 @@ nav button:hover {
     margin-bottom: 1.5rem;
     font-size: 1.8rem;
     font-weight: 600;
-    color: #333;
+    color: #0f0101;
 }
 
 .feature-cards {
@@ -172,12 +173,13 @@ nav button:hover {
 
 .card {
     background: #ffffff;
-    color: #333;
+    color: #f5f0f0;
     padding: 1rem;
-    width: 250px;
+    width: 300px;
+    height: 200px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: left;
+    
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -193,11 +195,79 @@ nav button:hover {
 }
 
 .card p {
-    font-size: 0.9rem;
-    color: #666;
+   
+    color: #0f0f0f;
+    font-family: 'Courier New', Courier, monospace;
 }
 p{
 
   font-weight: bold;
-  text-align: center;
+  text-align: start;
 }
+/* You can add global styles to this file, and also import other style files */
+
+.testimonials {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .testimonials-title {
+    font-size: 2rem;
+    color: #0a0a0a;
+    margin-bottom: 20px;
+  }
+  
+  .testimonial-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .testimonial-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .testimonial-card:hover .profile-pic {
+    transform: scale(1.1);
+  }
+  
+  .testimonial-content {
+    padding: 10px 0;
+  }
+  
+  .testimonial-text {
+    font-size: 1rem;
+    color: #0e0d0d;
+    margin-bottom: 10px;
+      line-height: 1.5;
+      font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .testimonial-author {
+    font-size: 0.9rem;
+    color: #0c0b0b;
+    font-weight: bold;
+  }
+  
